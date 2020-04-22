@@ -1,17 +1,26 @@
 import React from 'react';
-import logo from './assets/logo.svg';
+import Header from './components/Header';
+import Menu from './components/Menu';
+import List from './components/List';
 
-function App() {
+const App: React.FC = () => {
   const styles = {
-    container: 'container xl mx-auto',
-    logo: 'w-16',
+    container: `container
+      xl
+      h-full
+      mx-auto`,
+    content: `flex`,
   };
 
   return (
     <div className={styles.container}>
-      <img className={styles.logo} src={logo} alt="Seventy Five Logo" />
+      <Header />
+      <div className={styles.content}>
+        <Menu />
+        <List />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
