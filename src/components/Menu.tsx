@@ -17,7 +17,10 @@ const Menu: React.FC = () => {
       p-1
       bg-gray-200
       rounded-full
-      group-hover:bg-green-300`,
+      group-hover:bg-green-300
+      transition
+      duration-150
+      ease-in-out`,
     link: `
       group
       flex
