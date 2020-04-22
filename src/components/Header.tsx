@@ -1,7 +1,8 @@
 import React from 'react';
+import Search from './Search';
+import logo from '../assets/logo.svg';
 import {Icon} from '@iconify/react';
 import userPlus from '@iconify/icons-uil/user-plus';
-import logo from '../assets/logo.svg';
 
 const Header: React.FC = () => {
   const styles = {
@@ -14,7 +15,7 @@ const Header: React.FC = () => {
       flex
       items-center
       w-9/12
-      pr-6
+      px-6
       border-r
       border-b
       border-l
@@ -31,11 +32,15 @@ const Header: React.FC = () => {
       border-2
       border-green-400
       rounded-md
-      font-semibold
+      font-medium
       text-xl
       text-green-700
       hover:bg-green-400
-      hover:text-white`,
+      hover:text-white
+      focus:outline-none
+      transition
+      duration-150
+      ease-in-out`,
     buttonIcon: `w-6 h-6`,
     buttonText: `ml-2`,
   };
@@ -46,6 +51,7 @@ const Header: React.FC = () => {
         <img className={styles.logo} src={logo} alt="Seventy Five Logo" />
       </div>
       <div className={styles.headerRight}>
+        <Search />
         <button className={styles.button}>
           <Icon className={styles.buttonIcon} icon={userPlus}></Icon>
           <span className={styles.buttonText}>Add Student</span>

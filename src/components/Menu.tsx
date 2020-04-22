@@ -25,12 +25,15 @@ const Menu: React.FC = () => {
       mb-3
       px-4
       py-2
-      font-semibold
+      font-medium
       text-xl
       text-gray-700
       rounded-md
       hover:bg-green-200
-      hover:text-green-900`,
+      hover:text-green-900
+      transition
+      duration-150
+      ease-in-out`,
     linkText: `
       ml-4
       capitalize`,
