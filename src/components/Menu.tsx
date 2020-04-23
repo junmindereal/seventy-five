@@ -8,7 +8,7 @@ const Menu: React.FC = () => {
     menu: `
       flex
       flex-col
-      w-3/12
+      w-1/5
       mt-3
       pr-12`,
     icon: `

@@ -9,12 +9,12 @@ const Header: React.FC = () => {
     header: `flex`,
     headerLeft: `
       flex
-      w-3/12
+      w-1/5
       py-6`,
     headerRight: `
       flex
       items-center
-      w-9/12
+      w-4/5
       px-6
       border-r
       border-b

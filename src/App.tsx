@@ -5,11 +5,14 @@ import List from './components/List';
 
 const App: React.FC = () => {
   const styles = {
-    container: `container
+    container: `
+      container
       xl
       h-full
       mx-auto`,
-    content: `flex`,
+    content: `
+      content
+      flex`,
   };
 
   return (

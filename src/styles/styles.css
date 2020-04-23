@@ -10035,6 +10035,10 @@ video {
   transition-delay: 1000ms;
 }
 
+.content {
+  height: calc(100vh - 110px);
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;
