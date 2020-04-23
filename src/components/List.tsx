@@ -20,7 +20,7 @@ const List: React.FC = () => {
       text-left
       text-xl`,
     th: `
-      py-4
+      py-3
       font-normal
       text-gray-500`,
     thName: `
@@ -36,7 +36,7 @@ const List: React.FC = () => {
       w-2/12
       pr-6
       text-center`,
-    td: `py-6`,
+    td: `py-4`,
     tdName: `
       pl-6`,
     tdSubject: ``,
@@ -44,7 +44,8 @@ const List: React.FC = () => {
     tdAction: `pr-6`,
     tbodyTr: `
       border-b
-      border-gray-300`,
+      border-gray-300
+      even:bg-gray-100`,
     name: `
       text-xl
       font-semibold
@@ -58,8 +59,8 @@ const List: React.FC = () => {
       font-semibold
       uppercase
       text-white`,
-    statusPassed: `bg-green-400`,
-    statusFailed: `bg-red-400`,
+    statusPassed: `bg-green-500`,
+    statusFailed: `bg-red-500`,
     section: `
       text-gray-600`,
     quarter: `
@@ -79,7 +80,7 @@ const List: React.FC = () => {
       py-1
       border-2
       rounded-md
-      text-4xl
+      text-3xl
       font-bold`,
     finalPassed: `
       text-green-500
