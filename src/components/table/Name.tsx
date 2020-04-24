@@ -32,7 +32,7 @@ const Name: React.SFC<NameProps> = ({
         )}
       </div>
       <div>
-        <span className={section}>{section}</span>
+        <span className={styles.section}>{section}</span>
       </div>
     </td>
   );
