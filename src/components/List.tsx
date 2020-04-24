@@ -80,7 +80,7 @@ const List: React.FC = () => {
       py-1
       border-2
       rounded-md
-      text-3xl
+      text-2xl
       font-bold`,
     finalPassed: `
       text-green-500
@@ -153,6 +153,50 @@ const List: React.FC = () => {
               <div className={styles.final}>
                 <span className={`${styles.finalGrade} ${styles.finalPassed}`}>
                   75
+                </span>
+              </div>
+            </td>
+            <td className={`${styles.td} ${styles.tdAction}`}>
+              <div className={styles.action}>
+                <button className={styles.actionBtn}>
+                  <Icon icon={penIcon} />
+                  <span className={styles.actionBtnText}>Update</span>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr className={styles.tbodyTr}>
+            <td className={`${styles.td} ${styles.tdName}`}>
+              <div>
+                <span className={styles.name}>Dela Cruz, Juan</span>
+                <span className={`${styles.status} ${styles.statusFailed}`}>
+                  Failed
+                </span>
+              </div>
+              <div>
+                <span className={styles.section}>3 - Humility</span>
+              </div>
+            </td>
+            <td>
+              <div className={styles.quarter}>
+                <span className={`${styles.grade} ${styles.gradePass}`}>
+                  74
+                </span>
+                <span className={`${styles.grade} ${styles.gradeFail}`}>
+                  75
+                </span>
+                <span className={`${styles.grade} ${styles.gradePass}`}>
+                  75
+                </span>
+                <span className={`${styles.grade} ${styles.gradePass}`}>
+                  75
+                </span>
+              </div>
+            </td>
+            <td className={`${styles.td} ${styles.tdFinal}`}>
+              <div className={styles.final}>
+                <span className={`${styles.finalGrade} ${styles.finalFailed}`}>
+                  74
                 </span>
               </div>
             </td>

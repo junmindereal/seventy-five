@@ -22,7 +22,107 @@ const students: Array<object> = [
     },
     quarterAverages: [83, 83, 83, 83],
     finalGrade: 83,
-    status: 'passed',
+    passed: true,
+  },
+  {
+    _id: '5b21ca3eeb7f6fbccd471816',
+    firstName: 'Jose',
+    middleName: 'Protacio',
+    lastName: 'Rizal',
+    firstQuarter: {
+      quizzes: [74, 74, 74, 74],
+      average: 74,
+    },
+    secondQuarter: {
+      quizzes: [74, 74, 74, 74],
+      average: 74,
+    },
+    thirdQuarter: {
+      quizzes: [74, 74, 74, 74],
+      average: 74,
+    },
+    fourthQuarter: {
+      quizzes: [74, 74, 74, 74],
+      average: 74,
+    },
+    quarterAverages: [74, 74, 74, 74],
+    finalGrade: 74,
+    passed: false,
+  },
+  {
+    _id: '5b21ca3eeb7f6fbccd471817',
+    firstName: 'Emilio',
+    middleName: 'Famy',
+    lastName: 'Aguinaldo',
+    firstQuarter: {
+      quizzes: [74, 74],
+      average: 74,
+    },
+    secondQuarter: {
+      quizzes: [],
+      average: 0,
+    },
+    thirdQuarter: {
+      quizzes: [],
+      average: 0,
+    },
+    fourthQuarter: {
+      quizzes: [],
+      average: 0,
+    },
+    quarterAverages: [],
+    finalGrade: 0,
+    passed: false,
+  },
+  {
+    _id: '5b21ca3eeb7f6fbccd471818',
+    firstName: 'Manuel',
+    middleName: 'Luis',
+    lastName: 'Quezon',
+    firstQuarter: {
+      quizzes: [80, 80, 80],
+      average: 80,
+    },
+    secondQuarter: {
+      quizzes: [70, 70, 70],
+      average: 70,
+    },
+    thirdQuarter: {
+      quizzes: [],
+      average: 0,
+    },
+    fourthQuarter: {
+      quizzes: [],
+      average: 0,
+    },
+    quarterAverages: [],
+    finalGrade: 0,
+    passed: false,
+  },
+  {
+    _id: '5b21ca3eeb7f6fbccd471818',
+    firstName: 'Rodrigo',
+    middleName: 'Roa',
+    lastName: 'Duterte',
+    firstQuarter: {
+      quizzes: [],
+      average: 0,
+    },
+    secondQuarter: {
+      quizzes: [],
+      average: 0,
+    },
+    thirdQuarter: {
+      quizzes: [],
+      average: 0,
+    },
+    fourthQuarter: {
+      quizzes: [],
+      average: 0,
+    },
+    quarterAverages: [],
+    finalGrade: 0,
+    passed: false,
   },
 ];
 
