@@ -1,9 +1,12 @@
-const students: Array<object> = [
+import {Students} from '../types/index';
+
+const students: Students[] = [
   {
     _id: '5b21ca3eeb7f6fbccd471815',
     firstName: 'Juan',
     middleName: 'Mercado',
     lastName: 'Dela Cruz',
+    section: '2 - Patience',
     firstQuarter: {
       quizzes: [75, 80, 86, 90],
       average: 83,
@@ -29,6 +32,7 @@ const students: Array<object> = [
     firstName: 'Jose',
     middleName: 'Protacio',
     lastName: 'Rizal',
+    section: '4 - Galilee',
     firstQuarter: {
       quizzes: [74, 74, 74, 74],
       average: 74,
@@ -54,6 +58,7 @@ const students: Array<object> = [
     firstName: 'Emilio',
     middleName: 'Famy',
     lastName: 'Aguinaldo',
+    section: '3 - Humility',
     firstQuarter: {
       quizzes: [74, 74],
       average: 74,
@@ -79,6 +84,7 @@ const students: Array<object> = [
     firstName: 'Manuel',
     middleName: 'Luis',
     lastName: 'Quezon',
+    section: '2 - Hope',
     firstQuarter: {
       quizzes: [80, 80, 80],
       average: 80,
@@ -104,6 +110,7 @@ const students: Array<object> = [
     firstName: 'Rodrigo',
     middleName: 'Roa',
     lastName: 'Duterte',
+    section: '1 - Love',
     firstQuarter: {
       quizzes: [],
       average: 0,
@@ -126,6 +133,10 @@ const students: Array<object> = [
   },
 ];
 
-export function getStudents(): Array<object> {
+export function getStudents(): Students[] {
   return students;
+}
+
+export function getStudent(id: string): object | undefined {
+  return students.find(s => s._id === id);
 }

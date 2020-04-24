@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Icon} from '@iconify/react';
 import penIcon from '@iconify/icons-uil/pen';
+import {getStudents} from '../services/students';
 
 const List: React.FC = () => {
   const styles = {
@@ -109,6 +110,8 @@ const List: React.FC = () => {
       ml-2`,
   };
 
+  const [students] = useState(getStudents());
+
   return (
     <div className={styles.list}>
       <table className={styles.table}>
@@ -121,138 +124,91 @@ const List: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          <tr className={styles.tbodyTr}>
-            <td className={`${styles.td} ${styles.tdName}`}>
-              <div>
-                <span className={styles.name}>Dela Cruz, Juan</span>
-                <span className={`${styles.status} ${styles.statusPassed}`}>
-                  Passed
-                </span>
-              </div>
-              <div>
-                <span className={styles.section}>3 - Humility</span>
-              </div>
-            </td>
-            <td>
-              <div className={styles.quarter}>
-                <span className={`${styles.grade} ${styles.gradePass}`}>
-                  74
-                </span>
-                <span className={`${styles.grade} ${styles.gradeFail}`}>
-                  75
-                </span>
-                <span className={`${styles.grade} ${styles.gradePass}`}>
-                  75
-                </span>
-                <span className={`${styles.grade} ${styles.gradePass}`}>
-                  75
-                </span>
-              </div>
-            </td>
-            <td className={`${styles.td} ${styles.tdFinal}`}>
-              <div className={styles.final}>
-                <span className={`${styles.finalGrade} ${styles.finalPassed}`}>
-                  75
-                </span>
-              </div>
-            </td>
-            <td className={`${styles.td} ${styles.tdAction}`}>
-              <div className={styles.action}>
-                <button className={styles.actionBtn}>
-                  <Icon icon={penIcon} />
-                  <span className={styles.actionBtnText}>Update</span>
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr className={styles.tbodyTr}>
-            <td className={`${styles.td} ${styles.tdName}`}>
-              <div>
-                <span className={styles.name}>Dela Cruz, Juan</span>
-                <span className={`${styles.status} ${styles.statusFailed}`}>
-                  Failed
-                </span>
-              </div>
-              <div>
-                <span className={styles.section}>3 - Humility</span>
-              </div>
-            </td>
-            <td>
-              <div className={styles.quarter}>
-                <span className={`${styles.grade} ${styles.gradePass}`}>
-                  74
-                </span>
-                <span className={`${styles.grade} ${styles.gradeFail}`}>
-                  75
-                </span>
-                <span className={`${styles.grade} ${styles.gradePass}`}>
-                  75
-                </span>
-                <span className={`${styles.grade} ${styles.gradePass}`}>
-                  75
-                </span>
-              </div>
-            </td>
-            <td className={`${styles.td} ${styles.tdFinal}`}>
-              <div className={styles.final}>
-                <span className={`${styles.finalGrade} ${styles.finalFailed}`}>
-                  74
-                </span>
-              </div>
-            </td>
-            <td className={`${styles.td} ${styles.tdAction}`}>
-              <div className={styles.action}>
-                <button className={styles.actionBtn}>
-                  <Icon icon={penIcon} />
-                  <span className={styles.actionBtnText}>Update</span>
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr className={styles.tbodyTr}>
-            <td className={`${styles.td} ${styles.tdName}`}>
-              <div>
-                <span className={styles.name}>Dela Cruz, Juan</span>
-                <span className={`${styles.status} ${styles.statusFailed}`}>
-                  Failed
-                </span>
-              </div>
-              <div>
-                <span className={styles.section}>3 - Humility</span>
-              </div>
-            </td>
-            <td>
-              <div className={styles.quarter}>
-                <span className={`${styles.grade} ${styles.gradePass}`}>
-                  74
-                </span>
-                <span className={`${styles.grade} ${styles.gradeFail}`}>
-                  75
-                </span>
-                <span className={`${styles.grade} ${styles.gradePass}`}>
-                  75
-                </span>
-                <span className={`${styles.grade} ${styles.gradePass}`}>
-                  75
-                </span>
-              </div>
-            </td>
-            <td className={`${styles.td} ${styles.tdFinal}`}>
-              <div className={styles.final}>
-                <span className={`${styles.finalGrade} ${styles.finalFailed}`}>
-                  74
-                </span>
-              </div>
-            </td>
-            <td className={`${styles.td} ${styles.tdAction}`}>
-              <div className={styles.action}>
-                <button className={styles.actionBtn}>
-                  <Icon icon={penIcon} />
-                  <span className={styles.actionBtnText}>Update</span>
-                </button>
-              </div>
-            </td>
-          </tr>
+          {students.map(student => (
+            <tr className={styles.tbodyTr} key={student._id}>
+              <td className={`${styles.td} ${styles.tdName}`}>
+                <div>
+                  <span className={styles.name}>
+                    {`${student.lastName}, ${student.firstName}`}
+                  </span>
+                  {student.finalGrade > 0 && student.passed && (
+                    <span className={`${styles.status} ${styles.statusPassed}`}>
+                      Passed
+                    </span>
+                  )}
+                  {student.finalGrade > 0 && student.passed === false && (
+                    <span className={`${styles.status} ${styles.statusFailed}`}>
+                      Failed
+                    </span>
+                  )}
+                </div>
+                <div>
+                  <span className={styles.section}>{student.section}</span>
+                </div>
+              </td>
+              <td>
+                <div className={styles.quarter}>
+                  <span
+                    className={`${styles.grade} ${
+                      student.firstQuarter.average > 74
+                        ? styles.gradePass
+                        : styles.gradeFail
+                    }`}
+                  >
+                    {student.firstQuarter.average}
+                  </span>
+                  <span
+                    className={`${styles.grade} ${
+                      student.secondQuarter.average > 74
+                        ? styles.gradePass
+                        : styles.gradeFail
+                    }`}
+                  >
+                    {student.secondQuarter.average}
+                  </span>
+                  <span
+                    className={`${styles.grade} ${
+                      student.thirdQuarter.average > 74
+                        ? styles.gradePass
+                        : styles.gradeFail
+                    }`}
+                  >
+                    {student.thirdQuarter.average}
+                  </span>
+                  <span
+                    className={`${styles.grade} ${
+                      student.fourthQuarter.average > 74
+                        ? styles.gradePass
+                        : styles.gradeFail
+                    }`}
+                  >
+                    {student.fourthQuarter.average}
+                  </span>
+                </div>
+              </td>
+              <td className={`${styles.td} ${styles.tdFinal}`}>
+                <div className={styles.final}>
+                  <span
+                    className={`${styles.finalGrade} ${
+                      student.finalGrade > 74
+                        ? styles.finalPassed
+                        : styles.finalFailed
+                    }`}
+                  >
+                    {student.finalGrade}
+                  </span>
+                </div>
+              </td>
+              <td className={`${styles.td} ${styles.tdAction}`}>
+                <div className={styles.action}>
+                  <button className={styles.actionBtn}>
+                    <Icon icon={penIcon} />
+                    <span className={styles.actionBtnText}>Update</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
