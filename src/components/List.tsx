@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
-import {getStudents} from '../services/students';
 import Name from './table/Name';
 import Quarter from './table/Quarter';
 import FinalGrade from './table/FinalGrade';
 import Action from './table/Action';
+import {Students} from '../types/index';
 import {styles} from '../styles/table';
 
-const List: React.FC = () => {
-  const [students] = useState(getStudents());
+type StudentProps = {
+  studentsInfo: Array<Students>;
+};
 
-  const updateGrade: (event: React.MouseEvent<HTMLElement>) => void = () => {
-    console.log('hello');
-  };
+const List: React.FC<StudentProps> = ({studentsInfo}) => {
+  const [students] = useState(studentsInfo);
 
   return (
     <div className={styles.list}>
@@ -25,7 +25,7 @@ const List: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {students.map(student => (
+          {students.map((student: Students) => (
             <tr className={styles.tbodyTr} key={student._id}>
               <Name
                 firstName={student.firstName}
@@ -41,7 +41,7 @@ const List: React.FC = () => {
                 fourthQuarter={student.fourthQuarter.average}
               />
               <FinalGrade finalGrade={student.finalGrade} />
-              <Action onUpdateGrade={updateGrade} />
+              <Action studentInfo={student} />
             </tr>
           ))}
         </tbody>

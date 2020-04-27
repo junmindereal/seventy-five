@@ -1,9 +1,8 @@
 import React from 'react';
 import Search from './Search';
-import logo from '../assets/logo.svg';
-import {styles} from '../styles/header';
-import {Icon} from '@iconify/react';
-import userPlus from '@iconify/icons-uil/user-plus';
+import logo from '../../assets/logo.svg';
+import {styles} from '../../styles/header';
+import AddStudent from './AddStudent';
 
 const Header: React.FC = () => {
   return (
@@ -13,10 +12,7 @@ const Header: React.FC = () => {
       </div>
       <div className={styles.headerRight}>
         <Search />
-        <button className={styles.button}>
-          <Icon className={styles.buttonIcon} icon={userPlus}></Icon>
-          <span className={styles.buttonText}>Add Student</span>
-        </button>
+        <AddStudent />
       </div>
     </div>
   );

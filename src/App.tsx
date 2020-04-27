@@ -1,26 +1,18 @@
-import React from 'react';
-import Header from './components/Header';
+import React, {useState} from 'react';
+import Header from './components/header/Header';
 import Menu from './components/Menu';
 import List from './components/List';
+import {getStudents} from './services/students';
+import {styles} from './styles/app';
 
 const App: React.FC = () => {
-  const styles = {
-    container: `
-      container
-      xl
-      h-full
-      mx-auto`,
-    content: `
-      content
-      flex`,
-  };
-
+  const [students] = useState(getStudents());
   return (
     <div className={styles.container}>
       <Header />
       <div className={styles.content}>
         <Menu />
-        <List />
+        <List studentsInfo={students} />
       </div>
     </div>
   );

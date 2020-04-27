@@ -9,6 +9,7 @@
   "extends": [
     "eslint:recommended",
     "eslint-config-react-app",
+    "plugin:react-hooks/recommended",
     "eslint-config-prettier"
   ],
   "rules": {
