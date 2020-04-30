@@ -36,4 +36,12 @@ export const styles = {
     ease-in-out`,
   buttonIcon: `w-6 h-6`,
   buttonText: `ml-2`,
+  modal: `
+    absolute
+    inset-1/10
+    border-2
+    rounded-md
+    border-green-400
+    bg-white
+    outline-none`,
 };
