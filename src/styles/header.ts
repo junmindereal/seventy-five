@@ -39,6 +39,7 @@ export const styles = {
   modal: `
     absolute
     inset-1/10
+    p-8
     border-2
     rounded-md
     border-green-400
