@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import {styles} from '../../styles/header';
 import {Icon} from '@iconify/react';
 import userPlus from '@iconify/icons-uil/user-plus';
+import multiplyIcon from '@iconify/icons-uil/multiply';
 
 const AddStudent: React.SFC = () => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -25,17 +26,31 @@ const AddStudent: React.SFC = () => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         shouldCloseOnOverlayClick={true}
+        closeTimeoutMS={200}
         className={styles.modal}
       >
-        <h2>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
+        <h2 className={styles.modalHeading}>Add Student</h2>
+        <button className={styles.modalClose} onClick={closeModal}>
+          <Icon icon={multiplyIcon} />
+        </button>
         <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
+          <div>
+            <label htmlFor="firstName">First Name</label>
+            <input type="text" id="firstName" placeholder="Juan" />
+          </div>
+          <div>
+            <label htmlFor="middleName">Middle Name</label>
+            <input type="text" id="middleName" placeholder="Mercado" />
+          </div>
+          <div>
+            <label htmlFor="lastName">Last Name</label>
+            <input type="text" id="lastName" placeholder="Dela Cruz" />
+          </div>
+          <div>
+            <label htmlFor="section">Section</label>
+            <input type="text" id="sectionk" placeholder="3 - Wisdom" />
+          </div>
+          <button type="submit">Submit</button>
         </form>
       </Modal>
     </React.Fragment>

@@ -40,9 +40,18 @@ export const styles = {
     absolute
     inset-1/10
     p-8
-    border-2
-    rounded-md
-    border-green-400
+    border
+    border-gray-300
     bg-white
     outline-none`,
+  modalHeading: `
+    font-semibold
+    text-3xl
+    text-gray-900`,
+  modalClose: `
+    absolute
+    top-0
+    right-0
+    pt-8
+    pr-8`,
 };
