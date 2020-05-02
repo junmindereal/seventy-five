@@ -26,32 +26,75 @@ const AddStudent: React.SFC = () => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         shouldCloseOnOverlayClick={true}
-        closeTimeoutMS={200}
+        closeTimeoutMS={150}
         className={styles.modal}
       >
-        <h2 className={styles.modalHeading}>Add Student</h2>
-        <button className={styles.modalClose} onClick={closeModal}>
-          <Icon icon={multiplyIcon} />
-        </button>
-        <form>
-          <div>
-            <label htmlFor="firstName">First Name</label>
-            <input type="text" id="firstName" placeholder="Juan" />
-          </div>
-          <div>
-            <label htmlFor="middleName">Middle Name</label>
-            <input type="text" id="middleName" placeholder="Mercado" />
-          </div>
-          <div>
-            <label htmlFor="lastName">Last Name</label>
-            <input type="text" id="lastName" placeholder="Dela Cruz" />
-          </div>
-          <div>
-            <label htmlFor="section">Section</label>
-            <input type="text" id="sectionk" placeholder="3 - Wisdom" />
-          </div>
-          <button type="submit">Submit</button>
-        </form>
+        <div className={styles.modalContainer}>
+          <header className={styles.modalHeader}>
+            <h2 className={styles.modalHeading}>Add Student</h2>
+            <button className={styles.modalClose} onClick={closeModal}>
+              <Icon icon={multiplyIcon} />
+            </button>
+          </header>
+          <form>
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="firstName">
+                First Name
+              </label>
+              <input
+                className={styles.formInput}
+                type="text"
+                id="firstName"
+                placeholder="Juan"
+              />
+            </div>
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="middleName">
+                Middle Name
+              </label>
+              <input
+                className={styles.formInput}
+                type="text"
+                id="middleName"
+                placeholder="Mercado"
+              />
+            </div>
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="lastName">
+                Last Name
+              </label>
+              <input
+                className={styles.formInput}
+                type="text"
+                id="lastName"
+                placeholder="Dela Cruz"
+              />
+            </div>
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="section">
+                Section
+              </label>
+              <input
+                className={styles.formInput}
+                type="text"
+                id="sectionk"
+                placeholder="3 - Wisdom"
+              />
+            </div>
+            <div className={styles.action}>
+              <button
+                className={styles.cancel}
+                onClick={closeModal}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button className={styles.submit} type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </Modal>
     </React.Fragment>
   );
