@@ -1,6 +1,8 @@
 import React from 'react';
 import Modal from 'react-modal';
-import {styles} from '../../styles/header';
+import {btn} from '../../styles/btn';
+import {modal} from '../../styles/modal';
+import {form} from '../../styles/form';
 import {Icon} from '@iconify/react';
 import userPlus from '@iconify/icons-uil/user-plus';
 import multiplyIcon from '@iconify/icons-uil/multiply';
@@ -18,78 +20,78 @@ const AddStudent: React.SFC = () => {
 
   return (
     <React.Fragment>
-      <button className={styles.button} onClick={openModal}>
-        <Icon className={styles.buttonIcon} icon={userPlus}></Icon>
-        <span className={styles.buttonText}>Add Student</span>
+      <button className={btn.secondary} onClick={openModal}>
+        <Icon className={btn.secondaryIcon} icon={userPlus}></Icon>
+        <span className={btn.secondaryText}>Add Student</span>
       </button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         shouldCloseOnOverlayClick={true}
         closeTimeoutMS={150}
-        className={styles.modal}
+        className={modal.modal}
       >
-        <div className={styles.modalContainer}>
-          <header className={styles.modalHeader}>
-            <h2 className={styles.modalHeading}>Add Student</h2>
-            <button className={styles.modalClose} onClick={closeModal}>
+        <div className={modal.container}>
+          <header className={modal.header}>
+            <h2 className={modal.heading}>Add Student</h2>
+            <button className={modal.close} onClick={closeModal}>
               <Icon icon={multiplyIcon} />
             </button>
           </header>
           <form>
-            <div className={styles.formGroup}>
-              <label className={styles.formLabel} htmlFor="firstName">
+            <div className={form.group}>
+              <label className={form.label} htmlFor="firstName">
                 First Name
               </label>
               <input
-                className={styles.formInput}
+                className={form.input}
                 type="text"
                 id="firstName"
                 placeholder="Juan"
               />
             </div>
-            <div className={styles.formGroup}>
-              <label className={styles.formLabel} htmlFor="middleName">
+            <div className={form.group}>
+              <label className={form.label} htmlFor="middleName">
                 Middle Name
               </label>
               <input
-                className={styles.formInput}
+                className={form.input}
                 type="text"
                 id="middleName"
                 placeholder="Mercado"
               />
             </div>
-            <div className={styles.formGroup}>
-              <label className={styles.formLabel} htmlFor="lastName">
+            <div className={form.group}>
+              <label className={form.label} htmlFor="lastName">
                 Last Name
               </label>
               <input
-                className={styles.formInput}
+                className={form.input}
                 type="text"
                 id="lastName"
                 placeholder="Dela Cruz"
               />
             </div>
-            <div className={styles.formGroup}>
-              <label className={styles.formLabel} htmlFor="section">
+            <div className={form.group}>
+              <label className={form.label} htmlFor="section">
                 Section
               </label>
               <input
-                className={styles.formInput}
+                className={form.input}
                 type="text"
                 id="sectionk"
                 placeholder="3 - Wisdom"
               />
             </div>
-            <div className={styles.action}>
+            <div className={form.action}>
               <button
-                className={styles.cancel}
+                className={btn.tertiary}
                 onClick={closeModal}
                 type="button"
               >
                 Cancel
               </button>
-              <button className={styles.submit} type="submit">
+              <button className={`${btn.primary} ${form.submit}`} type="submit">
                 Submit
               </button>
             </div>
