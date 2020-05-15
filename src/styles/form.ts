@@ -12,8 +12,8 @@ export const form = {
     placeholder-gray-300
     border-2
     rounded-md
-    border-gray-100
-    bg-gray-100
+    border-gray-200
+    bg-white
     outline-none
     transition
     duration-150

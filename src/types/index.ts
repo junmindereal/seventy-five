@@ -40,21 +40,30 @@ export interface GradesPerQuarter {
   fourthQuarter: number;
 }
 
-export interface FormInput {
+export interface InputProps {
+  value: string;
   name: string;
   label: string;
   placeholder: string;
   type?: string;
+  onChange: (e: React.FormEvent<HTMLInputElement>) => void;
 }
 
 export interface FormButton {
   className: string;
   label: string | React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   type?: 'button' | 'submit' | 'reset' | undefined;
 }
 
 export interface MenuItem {
   icon: object;
   label: string;
+}
+
+export interface SetInput {
+  firstName: string;
+  middleName: string;
+  lastName: string;
+  section: string;
 }

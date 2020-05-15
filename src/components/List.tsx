@@ -7,11 +7,11 @@ import {Student} from '../types/index';
 import {table} from '../styles/table';
 
 type StudentProps = {
-  studentsInfo: Array<Student>;
+  data: Array<Student>;
 };
 
-const List: React.FC<StudentProps> = ({studentsInfo}) => {
-  const [students] = useState(studentsInfo);
+const List: React.FC<StudentProps> = ({data}) => {
+  const [students] = useState(data);
 
   return (
     <div className={table.list}>
