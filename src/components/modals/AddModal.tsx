@@ -1,5 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
+import Input from '../common/Input';
+import Button from '../common/Button';
 import {btn} from '../../styles/btn';
 import {modal} from '../../styles/modal';
 import {form} from '../../styles/form';
@@ -24,62 +26,28 @@ const AddModal: React.FC<AddModalProps> = ({modalIsOpen, closeModal}) => {
       <div className={modal.container}>
         <header className={modal.header}>
           <h2 className={modal.heading}>Add Student</h2>
-          <button className={modal.close} onClick={closeModal}>
-            <Icon icon={multiplyIcon} />
-          </button>
+          <Button
+            className={modal.close}
+            onClick={closeModal}
+            label={<Icon icon={multiplyIcon} />}
+          />
         </header>
         <form>
-          <div className={form.group}>
-            <label className={form.label} htmlFor="firstName">
-              First Name
-            </label>
-            <input
-              className={form.input}
-              type="text"
-              id="firstName"
-              placeholder="Juan"
-            />
-          </div>
-          <div className={form.group}>
-            <label className={form.label} htmlFor="middleName">
-              Middle Name
-            </label>
-            <input
-              className={form.input}
-              type="text"
-              id="middleName"
-              placeholder="Mercado"
-            />
-          </div>
-          <div className={form.group}>
-            <label className={form.label} htmlFor="lastName">
-              Last Name
-            </label>
-            <input
-              className={form.input}
-              type="text"
-              id="lastName"
-              placeholder="Dela Cruz"
-            />
-          </div>
-          <div className={form.group}>
-            <label className={form.label} htmlFor="section">
-              Section
-            </label>
-            <input
-              className={form.input}
-              type="text"
-              id="sectionk"
-              placeholder="3 - Wisdom"
-            />
-          </div>
+          <Input name="firstName" label="First Name" placeholder="Juan" />
+          <Input name="middleName" label="Middle Name" placeholder="Mercado" />
+          <Input name="lastName" label="Last Name" placeholder="Dela Cruz" />
+          <Input name="section" label="Section" placeholder="3 - Wisdom" />
           <div className={form.action}>
-            <button className={btn.tertiary} onClick={closeModal} type="button">
-              Cancel
-            </button>
-            <button className={`${btn.primary} ${form.submit}`} type="submit">
-              Submit
-            </button>
+            <Button
+              className={btn.tertiary}
+              label="Cancel"
+              onClick={closeModal}
+            />
+            <Button
+              className={`${btn.primary} ${form.submit}`}
+              label="Submit"
+              onClick={closeModal}
+            />
           </div>
         </form>
       </div>

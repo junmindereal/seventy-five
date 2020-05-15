@@ -39,3 +39,17 @@ export interface GradesPerQuarter {
   thirdQuarter: number;
   fourthQuarter: number;
 }
+
+export interface FormInput {
+  name: string;
+  label: string;
+  placeholder: string;
+  type?: string;
+}
+
+export interface FormButton {
+  className: string;
+  label: string | React.ReactNode;
+  onClick: () => void;
+  type?: 'button' | 'submit' | 'reset' | undefined;
+}
