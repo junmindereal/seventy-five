@@ -53,3 +53,8 @@ export interface FormButton {
   onClick: () => void;
   type?: 'button' | 'submit' | 'reset' | undefined;
 }
+
+export interface MenuItem {
+  icon: object;
+  label: string;
+}
