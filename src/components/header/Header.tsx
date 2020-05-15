@@ -1,8 +1,8 @@
 import React from 'react';
 import Search from './Search';
+import AddStudent from './AddStudent';
 import logo from '../../assets/logo.svg';
 import {header} from '../../styles/header';
-import AddStudent from './AddStudent';
 
 const Header: React.FC = () => {
   return (

@@ -3,14 +3,14 @@ import Header from './components/header/Header';
 import Menu from './components/Menu';
 import List from './components/List';
 import {getStudents} from './services/students';
-import {styles} from './styles/app';
+import {app} from './styles/app';
 
 const App: React.FC = () => {
   const [students] = useState(getStudents());
   return (
-    <div className={styles.container}>
+    <div className={app.container}>
       <Header />
-      <div className={styles.content}>
+      <div className={app.content}>
         <Menu />
         <List studentsInfo={students} />
       </div>

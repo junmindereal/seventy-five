@@ -1,4 +1,4 @@
-export const styles = {
+export const menu = {
   menu: `
     flex
     flex-col

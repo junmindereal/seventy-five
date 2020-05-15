@@ -1,5 +1,5 @@
 import React from 'react';
-import {styles} from '../../styles/table';
+import {table} from '../../styles/table';
 
 type FinalGradeProps = {
   finalGrade: number;
@@ -8,11 +8,11 @@ type FinalGradeProps = {
 const FinalGrade: React.SFC<FinalGradeProps> = ({finalGrade}) => {
   const failingGrade = 74;
   return (
-    <td className={`${styles.td} ${styles.tdFinal}`}>
-      <div className={styles.final}>
+    <td className={`${table.td} ${table.tdFinal}`}>
+      <div className={table.final}>
         <span
-          className={`${styles.finalGrade} ${
-            finalGrade > failingGrade ? styles.finalPassed : styles.finalFailed
+          className={`${table.finalGrade} ${
+            finalGrade > failingGrade ? table.finalPassed : table.finalFailed
           }`}
         >
           {finalGrade}

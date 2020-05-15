@@ -1,5 +1,5 @@
 import React from 'react';
-import {styles} from '../../styles/table';
+import {table} from '../../styles/table';
 
 type NameProps = {
   firstName: string;
@@ -17,22 +17,22 @@ const Name: React.SFC<NameProps> = ({
   passed,
 }) => {
   return (
-    <td className={`${styles.td} ${styles.tdName}`}>
+    <td className={`${table.td} ${table.tdName}`}>
       <div>
-        <span className={styles.name}>{`${lastName}, ${firstName}`}</span>
+        <span className={table.name}>{`${lastName}, ${firstName}`}</span>
         {finalGrade > 0 && passed && (
-          <span className={`${styles.status} ${styles.statusPassed}`}>
+          <span className={`${table.status} ${table.statusPassed}`}>
             Passed
           </span>
         )}
         {finalGrade > 0 && passed === false && (
-          <span className={`${styles.status} ${styles.statusFailed}`}>
+          <span className={`${table.status} ${table.statusFailed}`}>
             Failed
           </span>
         )}
       </div>
       <div>
-        <span className={styles.section}>{section}</span>
+        <span className={table.section}>{section}</span>
       </div>
     </td>
   );

@@ -1,4 +1,4 @@
-export const styles = {
+export const table = {
   list: `
     w-4/5
     h-full

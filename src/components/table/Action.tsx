@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {styles} from '../../styles/table';
+import {table} from '../../styles/table';
 import penIcon from '@iconify/icons-uil/pen';
 import {Icon} from '@iconify/react';
 
@@ -14,16 +14,16 @@ const Action: React.FC<StudentProp> = ({studentInfo}) => {
   };
 
   return (
-    <td className={`${styles.td} ${styles.tdAction}`}>
+    <td className={`${table.td} ${table.tdAction}`}>
       <div
-        className={styles.action}
+        className={table.action}
         onClick={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
           updateStudentGrade(student)
         }
       >
-        <button className={styles.actionBtn}>
+        <button className={table.actionBtn}>
           <Icon icon={penIcon} />
-          <span className={styles.actionBtnText}>Update</span>
+          <span className={table.actionBtnText}>Update</span>
         </button>
       </div>
     </td>

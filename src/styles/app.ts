@@ -1,4 +1,4 @@
-export const styles = {
+export const app = {
   container: `
     container
     xl

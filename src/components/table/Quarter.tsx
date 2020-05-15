@@ -1,5 +1,5 @@
 import React from 'react';
-import {styles} from '../../styles/table';
+import {table} from '../../styles/table';
 
 type QuarterProps = {
   firstQuarter: number;
@@ -18,31 +18,31 @@ const Quarter: React.SFC<QuarterProps> = ({
 
   return (
     <td>
-      <div className={styles.quarter}>
+      <div className={table.quarter}>
         <span
-          className={`${styles.grade} ${
-            firstQuarter > failingGrade ? styles.gradePass : styles.gradeFail
+          className={`${table.grade} ${
+            firstQuarter > failingGrade ? table.gradePass : table.gradeFail
           }`}
         >
           {firstQuarter}
         </span>
         <span
-          className={`${styles.grade} ${
-            secondQuarter > failingGrade ? styles.gradePass : styles.gradeFail
+          className={`${table.grade} ${
+            secondQuarter > failingGrade ? table.gradePass : table.gradeFail
           }`}
         >
           {secondQuarter}
         </span>
         <span
-          className={`${styles.grade} ${
-            thirdQuarter > failingGrade ? styles.gradePass : styles.gradeFail
+          className={`${table.grade} ${
+            thirdQuarter > failingGrade ? table.gradePass : table.gradeFail
           }`}
         >
           {thirdQuarter}
         </span>
         <span
-          className={`${styles.grade} ${
-            fourthQuarter > failingGrade ? styles.gradePass : styles.gradeFail
+          className={`${table.grade} ${
+            fourthQuarter > failingGrade ? table.gradePass : table.gradeFail
           }`}
         >
           {fourthQuarter}
