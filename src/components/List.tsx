@@ -3,11 +3,11 @@ import Name from './table/Name';
 import Quarter from './table/Quarter';
 import FinalGrade from './table/FinalGrade';
 import Action from './table/Action';
-import {Students} from '../types/index';
+import {Student} from '../types/index';
 import {table} from '../styles/table';
 
 type StudentProps = {
-  studentsInfo: Array<Students>;
+  studentsInfo: Array<Student>;
 };
 
 const List: React.FC<StudentProps> = ({studentsInfo}) => {
@@ -25,7 +25,7 @@ const List: React.FC<StudentProps> = ({studentsInfo}) => {
           </tr>
         </thead>
         <tbody>
-          {students.map((student: Students) => (
+          {students.map((student: Student) => (
             <tr className={table.tbodyTr} key={student._id}>
               <Name
                 firstName={student.firstName}

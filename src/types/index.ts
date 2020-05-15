@@ -1,4 +1,4 @@
-export interface Students {
+export interface Student {
   _id: string;
   firstName: string;
   middleName: string;
@@ -23,4 +23,19 @@ export interface Students {
   quarterAverages: number[];
   finalGrade: number;
   passed: boolean;
+}
+
+export interface StudentOnList {
+  firstName: string;
+  lastName: string;
+  section: string;
+  finalGrade: number;
+  passed: boolean;
+}
+
+export interface GradesPerQuarter {
+  firstQuarter: number;
+  secondQuarter: number;
+  thirdQuarter: number;
+  fourthQuarter: number;
 }

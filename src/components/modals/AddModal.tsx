@@ -19,6 +19,7 @@ const AddModal: React.FC<AddModalProps> = ({modalIsOpen, closeModal}) => {
       shouldCloseOnOverlayClick={true}
       closeTimeoutMS={150}
       className={modal.modal}
+      ariaHideApp={false}
     >
       <div className={modal.container}>
         <header className={modal.header}>

@@ -1,6 +1,6 @@
-import {Students} from '../types/index';
+import {Student} from '../types/index';
 
-const students: Students[] = [
+const students: Student[] = [
   {
     _id: '5b21ca3eeb7f6fbccd471815',
     firstName: 'Juan',
@@ -133,10 +133,14 @@ const students: Students[] = [
   },
 ];
 
-export function getStudents(): Students[] {
+export function getStudents(): Student[] {
   return students;
 }
 
 export function getStudent(id: string): object | undefined {
   return students.find(s => s._id === id);
+}
+
+export function saveStudent(student: Student): number {
+  return students.push(student);
 }

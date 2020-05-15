@@ -1,15 +1,8 @@
 import React from 'react';
+import {StudentOnList} from '../../types/index';
 import {table} from '../../styles/table';
 
-type NameProps = {
-  firstName: string;
-  lastName: string;
-  section: string;
-  finalGrade: number;
-  passed: boolean;
-};
-
-const Name: React.SFC<NameProps> = ({
+const Name: React.SFC<StudentOnList> = ({
   firstName,
   lastName,
   section,

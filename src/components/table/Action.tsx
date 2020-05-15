@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
+import {Student} from '../../types/index';
 import {table} from '../../styles/table';
 import penIcon from '@iconify/icons-uil/pen';
 import {Icon} from '@iconify/react';
 
 type StudentProp = {
-  studentInfo: object;
+  studentInfo: Student;
 };
 
 const Action: React.FC<StudentProp> = ({studentInfo}) => {
   const [student] = useState(studentInfo);
-  const updateStudentGrade = (student: object) => {
+  const updateStudentGrade = (student: object): void => {
     console.log(student);
   };
 
@@ -17,7 +18,7 @@ const Action: React.FC<StudentProp> = ({studentInfo}) => {
     <td className={`${table.td} ${table.tdAction}`}>
       <div
         className={table.action}
-        onClick={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
+        onClick={(event: React.MouseEvent<HTMLDivElement, MouseEvent>): void =>
           updateStudentGrade(student)
         }
       >
