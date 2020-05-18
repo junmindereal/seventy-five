@@ -9,6 +9,7 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   type = 'text',
   onChange,
+  error,
 }) => {
   return (
     <div className={form.group}>
@@ -24,6 +25,7 @@ const Input: React.FC<InputProps> = ({
         placeholder={placeholder}
         onChange={onChange}
       />
+      {error && <div>{error}</div>}
     </div>
   );
 };

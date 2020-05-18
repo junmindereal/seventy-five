@@ -47,6 +47,7 @@ export interface InputProps {
   placeholder: string;
   type?: string;
   onChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  error: string | {};
 }
 
 export interface ButtonProps {

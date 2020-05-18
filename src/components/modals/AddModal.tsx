@@ -1,8 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import Input from '../common/Input';
 import Button from '../common/Button';
-import {StudentProps} from '../../types';
 import {btn} from '../../styles/btn';
 import {modal} from '../../styles/modal';
 import {form} from '../../styles/form';
@@ -12,17 +10,15 @@ import multiplyIcon from '@iconify/icons-uil/multiply';
 interface AddModalProps {
   modalIsOpen: boolean;
   closeModal: () => void;
-  student: StudentProps;
-  handleInput: (e: React.FormEvent<HTMLInputElement>) => void;
-  doSubmit: (e: React.FormEvent) => void;
+  handleSubmit: (e: React.FormEvent) => void;
+  children: React.ReactNode;
 }
 
 const AddModal: React.FC<AddModalProps> = ({
   modalIsOpen,
   closeModal,
-  student,
-  handleInput,
-  doSubmit,
+  handleSubmit,
+  children,
 }) => {
   return (
     <Modal
@@ -42,35 +38,8 @@ const AddModal: React.FC<AddModalProps> = ({
             label={<Icon icon={multiplyIcon} />}
           />
         </header>
-        <form onSubmit={doSubmit}>
-          <Input
-            value={student.firstName}
-            name="firstName"
-            label="First Name"
-            placeholder="Juan"
-            onChange={handleInput}
-          />
-          <Input
-            value={student.middleName}
-            name="middleName"
-            label="Middle Name"
-            placeholder="Mercado"
-            onChange={handleInput}
-          />
-          <Input
-            value={student.lastName}
-            name="lastName"
-            label="Last Name"
-            placeholder="Dela Cruz"
-            onChange={handleInput}
-          />
-          <Input
-            value={student.section}
-            name="section"
-            label="Section"
-            placeholder="3 - Wisdom"
-            onChange={handleInput}
-          />
+        <form onSubmit={handleSubmit}>
+          {children}
           <div className={form.action}>
             <Button
               className={btn.tertiary}
