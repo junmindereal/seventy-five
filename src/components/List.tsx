@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Name from './table/Name';
 import Quarter from './table/Quarter';
 import FinalGrade from './table/FinalGrade';
@@ -10,9 +10,7 @@ type StudentProps = {
   data: Array<Student>;
 };
 
-const List: React.FC<StudentProps> = ({data}) => {
-  const [students] = useState(data);
-
+const List: React.FC<StudentProps> = ({data: students}) => {
   return (
     <div className={table.list}>
       <table className={table.table}>

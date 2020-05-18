@@ -1,4 +1,4 @@
-import {Student} from '../types/index';
+import {Student} from './../types/index';
 
 const students: Student[] = [
   {
@@ -141,6 +141,48 @@ export function getStudent(id: string): object | undefined {
   return students.find(s => s._id === id);
 }
 
-export function saveStudent(student: Student): number {
-  return students.push(student);
+export function saveStudent(student: Student): Student {
+  const studentInDb: Student = {
+    _id: '',
+    firstName: '',
+    middleName: '',
+    lastName: '',
+    section: '',
+    firstQuarter: {
+      quizzes: [],
+      average: 0,
+    },
+    secondQuarter: {
+      quizzes: [],
+      average: 0,
+    },
+    thirdQuarter: {
+      quizzes: [],
+      average: 0,
+    },
+    fourthQuarter: {
+      quizzes: [],
+      average: 0,
+    },
+    quarterAverages: [],
+    finalGrade: 0,
+    passed: false,
+  };
+
+  studentInDb._id = student._id;
+  studentInDb.firstName = student.firstName;
+  studentInDb.middleName = student.middleName;
+  studentInDb.lastName = student.lastName;
+  studentInDb.section = student.section;
+  studentInDb.firstQuarter = student.firstQuarter;
+  studentInDb.secondQuarter = student.secondQuarter;
+  studentInDb.thirdQuarter = student.thirdQuarter;
+  studentInDb.fourthQuarter = student.fourthQuarter;
+  studentInDb.quarterAverages = student.quarterAverages;
+  studentInDb.finalGrade = student.finalGrade;
+  studentInDb.passed = student.passed;
+
+  students.push(studentInDb);
+
+  return studentInDb;
 }

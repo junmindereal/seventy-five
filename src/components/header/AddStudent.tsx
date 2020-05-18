@@ -2,13 +2,12 @@ import React, {useState} from 'react';
 import {v4 as uuid} from 'uuid';
 import AddModal from '../modals/AddModal';
 import {Student} from '../../types/index';
-import {saveStudent} from '../../services/students';
 import {btn} from '../../styles/btn';
 import {Icon} from '@iconify/react';
 import userPlus from '@iconify/icons-uil/user-plus';
 
 type AddStudentProps = {
-  data: Array<Student>;
+  data: Student[];
 };
 
 const AddStudent: React.FC<AddStudentProps> = ({data}) => {
@@ -22,7 +21,7 @@ const AddStudent: React.FC<AddStudentProps> = ({data}) => {
     setIsOpen(false);
   }
 
-  const [student, setStudent] = useState<Student>({
+  const initialFormState = {
     _id: '',
     firstName: '',
     middleName: '',
@@ -47,12 +46,14 @@ const AddStudent: React.FC<AddStudentProps> = ({data}) => {
     quarterAverages: [],
     finalGrade: 0,
     passed: false,
-  });
+  };
+
+  const [formState, setFormState] = useState<Student>(initialFormState);
 
   const handleInput = (e: React.FormEvent<HTMLInputElement>): void => {
     const input = e.currentTarget;
-    setStudent(student => ({
-      ...student,
+    setFormState(student => ({
+      ...formState,
       _id: uuid(),
       [input.name]: input.value,
     }));
@@ -60,7 +61,6 @@ const AddStudent: React.FC<AddStudentProps> = ({data}) => {
 
   function doSubmit(e: React.FormEvent): void {
     e.preventDefault();
-    saveStudent(student);
   }
 
   return (
@@ -74,7 +74,7 @@ const AddStudent: React.FC<AddStudentProps> = ({data}) => {
         closeModal={closeModal}
         handleInput={handleInput}
         doSubmit={doSubmit}
-        student={student}
+        student={formState}
       />
     </React.Fragment>
   );
