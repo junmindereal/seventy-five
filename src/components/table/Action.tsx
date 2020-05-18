@@ -1,15 +1,14 @@
-import React, {useState} from 'react';
-import {Student} from '../../types/index';
+import React from 'react';
+import {StudentProps} from '../../types/index';
 import {table} from '../../styles/table';
 import penIcon from '@iconify/icons-uil/pen';
 import {Icon} from '@iconify/react';
 
-type StudentProp = {
-  studentInfo: Student;
+type ActionProps = {
+  student: StudentProps;
 };
 
-const Action: React.FC<StudentProp> = ({studentInfo}) => {
-  const [student] = useState(studentInfo);
+const Action: React.FC<ActionProps> = ({student}) => {
   const updateStudentGrade = (student: object): void => {
     console.log(student);
   };

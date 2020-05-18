@@ -1,8 +1,8 @@
 import React from 'react';
-import {StudentOnList} from '../../types/index';
+import {StudentNameProps} from '../../types/index';
 import {table} from '../../styles/table';
 
-const Name: React.SFC<StudentOnList> = ({
+const StudentName: React.SFC<StudentNameProps> = ({
   firstName,
   lastName,
   section,
@@ -31,4 +31,4 @@ const Name: React.SFC<StudentOnList> = ({
   );
 };
 
-export default Name;
+export default StudentName;

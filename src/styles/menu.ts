@@ -3,8 +3,10 @@ export const menu = {
     flex
     flex-col
     w-1/5
-    mt-3
-    pr-12`,
+    pt-3
+    pr-12
+    border-r
+    border-gray-300`,
   icon: `
     w-8
     h-8

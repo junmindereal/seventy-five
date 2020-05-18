@@ -1,7 +1,7 @@
 import React from 'react';
-import {FormButton} from '../../types/index';
+import {ButtonProps} from '../../types/index';
 
-const Button: React.FC<FormButton> = ({
+const Button: React.FC<ButtonProps> = ({
   className,
   label,
   onClick,

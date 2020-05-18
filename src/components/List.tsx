@@ -1,16 +1,16 @@
 import React from 'react';
-import Name from './table/Name';
+import StudentName from './table/StudentName';
 import Quarter from './table/Quarter';
 import FinalGrade from './table/FinalGrade';
 import Action from './table/Action';
-import {Student} from '../types/index';
+import {StudentProps} from '../types/index';
 import {table} from '../styles/table';
 
-type StudentProps = {
-  data: Array<Student>;
+type StudentsProps = {
+  students: Array<StudentProps>;
 };
 
-const List: React.FC<StudentProps> = ({data: students}) => {
+const List: React.FC<StudentsProps> = ({students}) => {
   return (
     <div className={table.list}>
       <table className={table.table}>
@@ -23,9 +23,9 @@ const List: React.FC<StudentProps> = ({data: students}) => {
           </tr>
         </thead>
         <tbody>
-          {students.map((student: Student) => (
+          {students.map((student: StudentProps) => (
             <tr className={table.tbodyTr} key={student._id}>
-              <Name
+              <StudentName
                 firstName={student.firstName}
                 lastName={student.lastName}
                 section={student.section}
@@ -39,7 +39,7 @@ const List: React.FC<StudentProps> = ({data: students}) => {
                 fourthQuarter={student.fourthQuarter.average}
               />
               <FinalGrade finalGrade={student.finalGrade} />
-              <Action studentInfo={student} />
+              <Action student={student} />
             </tr>
           ))}
         </tbody>

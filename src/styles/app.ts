@@ -6,5 +6,7 @@ export const app = {
     mx-auto`,
   content: `
     content
-    flex`,
+    flex
+    border-r
+    border-gray-300`,
 };

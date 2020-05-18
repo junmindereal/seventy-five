@@ -1,4 +1,4 @@
-export interface Student {
+export interface StudentProps {
   _id: string;
   firstName: string;
   middleName: string;
@@ -25,7 +25,7 @@ export interface Student {
   passed: boolean;
 }
 
-export interface StudentOnList {
+export interface StudentNameProps {
   firstName: string;
   lastName: string;
   section: string;
@@ -33,7 +33,7 @@ export interface StudentOnList {
   passed: boolean;
 }
 
-export interface GradesPerQuarter {
+export interface QuarterProps {
   firstQuarter: number;
   secondQuarter: number;
   thirdQuarter: number;
@@ -49,21 +49,14 @@ export interface InputProps {
   onChange: (e: React.FormEvent<HTMLInputElement>) => void;
 }
 
-export interface FormButton {
+export interface ButtonProps {
   className: string;
   label: string | React.ReactNode;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset' | undefined;
 }
 
-export interface MenuItem {
+export interface MenuLinkProps {
   icon: object;
   label: string;
-}
-
-export interface SetInput {
-  firstName: string;
-  middleName: string;
-  lastName: string;
-  section: string;
 }

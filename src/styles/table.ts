@@ -1,10 +1,7 @@
 export const table = {
   list: `
     w-4/5
-    h-full
-    border-r
-    border-l
-    border-gray-300`,
+    h-full`,
   table: `
     table-fixed
     w-full`,

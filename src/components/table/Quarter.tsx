@@ -1,8 +1,8 @@
 import React from 'react';
-import {GradesPerQuarter} from '../../types/index';
+import {QuarterProps} from '../../types/index';
 import {table} from '../../styles/table';
 
-const Quarter: React.SFC<GradesPerQuarter> = ({
+const Quarter: React.SFC<QuarterProps> = ({
   firstQuarter,
   secondQuarter,
   thirdQuarter,

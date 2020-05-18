@@ -1,22 +1,21 @@
 import React, {useState} from 'react';
 import {v4 as uuid} from 'uuid';
 import AddModal from '../modals/AddModal';
-import {Student} from '../../types/index';
+import {StudentProps} from '../../types/index';
 import {btn} from '../../styles/btn';
 import {Icon} from '@iconify/react';
 import userPlus from '@iconify/icons-uil/user-plus';
 
 type AddStudentProps = {
-  data: Student[];
+  students: StudentProps[];
+  setStudents: React.Dispatch<React.SetStateAction<StudentProps[]>>;
 };
 
-const AddStudent: React.FC<AddStudentProps> = ({data}) => {
+const AddStudent: React.FC<AddStudentProps> = ({students, setStudents}) => {
   const [modalIsOpen, setIsOpen] = useState(false);
-
   function openModal(): void {
     setIsOpen(true);
   }
-
   function closeModal(): void {
     setIsOpen(false);
   }
@@ -47,20 +46,21 @@ const AddStudent: React.FC<AddStudentProps> = ({data}) => {
     finalGrade: 0,
     passed: false,
   };
-
-  const [formState, setFormState] = useState<Student>(initialFormState);
-
+  const [formState, setFormState] = useState<StudentProps>(initialFormState);
   const handleInput = (e: React.FormEvent<HTMLInputElement>): void => {
     const input = e.currentTarget;
-    setFormState(student => ({
+    setFormState({
       ...formState,
       _id: uuid(),
       [input.name]: input.value,
-    }));
+    });
   };
 
   function doSubmit(e: React.FormEvent): void {
     e.preventDefault();
+    setStudents([...students, formState]);
+    setFormState(initialFormState);
+    closeModal();
   }
 
   return (

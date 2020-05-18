@@ -1,9 +1,9 @@
 import React from 'react';
 import {Icon} from '@iconify/react';
 import {menu} from '../../styles/menu';
-import {MenuItem} from '../../types/index';
+import {MenuLinkProps} from '../../types/index';
 
-const MenuLink: React.FC<MenuItem> = ({icon, label}) => {
+const MenuLink: React.FC<MenuLinkProps> = ({icon, label}) => {
   return (
     <div className={menu.link}>
       <Icon className={menu.icon} icon={icon} />

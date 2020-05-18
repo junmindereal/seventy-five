@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import Input from '../common/Input';
 import Button from '../common/Button';
-import {Student} from '../../types';
+import {StudentProps} from '../../types';
 import {btn} from '../../styles/btn';
 import {modal} from '../../styles/modal';
 import {form} from '../../styles/form';
@@ -12,7 +12,7 @@ import multiplyIcon from '@iconify/icons-uil/multiply';
 interface AddModalProps {
   modalIsOpen: boolean;
   closeModal: () => void;
-  student: Student;
+  student: StudentProps;
   handleInput: (e: React.FormEvent<HTMLInputElement>) => void;
   doSubmit: (e: React.FormEvent) => void;
 }
