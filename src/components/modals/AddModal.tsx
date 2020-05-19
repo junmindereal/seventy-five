@@ -71,7 +71,7 @@ const AddModal: React.FC<AddModalProps> = ({
           />
           <div className={form.action}>
             <Button
-              className={btn.secondary}
+              className={`${btn.secondary} ${btn.reset}`}
               label="Reset"
               onClick={handleReset}
             />

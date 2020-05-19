@@ -46,6 +46,7 @@ const AddStudent: React.FC<AddStudentProps> = ({students, setStudents}) => {
 
   const handleReset = (): void => {
     setFormState(initialFormState);
+    setErrors({});
   };
 
   const handleSubmit = (e: React.FormEvent): void => {
@@ -62,7 +63,10 @@ const AddStudent: React.FC<AddStudentProps> = ({students, setStudents}) => {
 
   return (
     <React.Fragment>
-      <button className={btn.secondary} onClick={openModal}>
+      <button
+        className={`${btn.secondary}  ${btn.AddStudent}`}
+        onClick={openModal}
+      >
         <Icon className={btn.secondaryIcon} icon={userPlus}></Icon>
         <span className={btn.secondaryText}>Add Student</span>
       </button>
