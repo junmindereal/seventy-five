@@ -20,6 +20,8 @@ export const form = {
     ease-in-out
     focus:border-green-400
     focus:bg-white`,
+  inputError: `
+    border-red-400`,
   label: `
     mb-1
     text-gray-700`,
@@ -30,4 +32,9 @@ export const form = {
     mt-8`,
   submit: `
     ml-4`,
+  error: `
+    block
+    mt-1
+    text-sm
+    text-red-500`,
 };

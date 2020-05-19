@@ -19,13 +19,13 @@ const Input: React.FC<InputProps> = ({
       <input
         value={value}
         type={type}
-        className={form.input}
+        className={`${form.input} ${error && form.inputError}`}
         name={name}
         id={name}
         placeholder={placeholder}
         onChange={onChange}
       />
-      {error && <div>{error}</div>}
+      {error && <p className={form.error}>{error}</p>}
     </div>
   );
 };
