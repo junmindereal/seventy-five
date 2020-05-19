@@ -29,10 +29,6 @@ const AddStudent: React.FC<AddStudentProps> = ({students, setStudents}) => {
 
   const [errors, setErrors] = useState<ErrorsProps>({});
 
-  useEffect(() => {
-    setErrors(errors);
-  }, [errors]);
-
   const schema = Joi.object({
     _id: Joi.string(),
     firstName: Joi.string().required().label('First Name').min(2),
