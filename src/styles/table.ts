@@ -56,9 +56,9 @@ export const table = {
   section: `
     text-gray-600`,
   quarter: `
-    flex
-    justify-around`,
+    flex`,
   grade: `
+    w-1/4
     px-2
     py-1
     rounded-md
@@ -70,16 +70,15 @@ export const table = {
   finalGrade: `
     px-2
     py-1
-    border-2
     rounded-md
     text-2xl
     font-bold`,
   finalPassed: `
-    text-green-500
-    border-green-500`,
+    text-white
+    bg-green-500`,
   finalFailed: `
-    text-red-500
-    border-red-500`,
+    text-white
+    bg-red-500`,
   action: `
     flex
     justify-center`,

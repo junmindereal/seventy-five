@@ -12,10 +12,12 @@ const FinalGrade: React.SFC<FinalGradeProps> = ({finalGrade}) => {
       <div className={table.final}>
         <span
           className={`${table.finalGrade} ${
-            finalGrade > failingGrade ? table.finalPassed : table.finalFailed
+            finalGrade > failingGrade && table.finalPassed
+          } ${
+            finalGrade <= failingGrade && finalGrade > 0 && table.finalFailed
           }`}
         >
-          {finalGrade}
+          {finalGrade > 0 && finalGrade}
         </span>
       </div>
     </td>
