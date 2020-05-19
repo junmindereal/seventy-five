@@ -49,6 +49,12 @@ const AddStudent: React.FC<AddStudentProps> = ({students, setStudents}) => {
     setErrors({});
   };
 
+  const handleCancel = (): void => {
+    setFormState(initialFormState);
+    setErrors({});
+    closeModal();
+  };
+
   const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
 
@@ -72,7 +78,7 @@ const AddStudent: React.FC<AddStudentProps> = ({students, setStudents}) => {
       </button>
       <AddModal
         modalIsOpen={modalIsOpen}
-        closeModal={closeModal}
+        closeModal={handleCancel}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         handleReset={handleReset}
