@@ -27,9 +27,7 @@ export const btn = {
     ease-in-out
     hover:bg-green-400
     hover:text-white
-    focus:outline-none
-    focus:bg-green-400
-    focus:text-white`,
+    focus:outline-none`,
   secondaryIcon: `w-6 h-6`,
   secondaryText: `ml-2`,
   tertiary: `
@@ -57,5 +55,7 @@ export const btn = {
     text-xl
     text-green-700`,
   reset: `
-    mr-auto`,
+    mr-auto
+    focus:bg-green-400
+    focus:text-white`,
 };

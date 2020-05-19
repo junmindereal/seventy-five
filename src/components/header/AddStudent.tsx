@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {v4 as uuid} from 'uuid';
 import AddModal from '../modals/AddModal';
-import {initialAddStudentFormState as initialFormState} from '../utils/constants';
-import {AddStudentFormSchema as schema} from '../utils/constants';
+import {initialAddStudentFormState as initialFormState} from '../../utils/constants';
+import {AddStudentFormSchema as schema} from '../../utils/constants';
 import {StudentProps} from '../../types/index';
 import {AddStudentProps} from '../../types/index';
 import {ErrorsProps} from '../../types/index';
