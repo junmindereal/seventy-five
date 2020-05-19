@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {v4 as uuid} from 'uuid';
 import Joi from '@hapi/joi';
 import AddModal from '../modals/AddModal';
-import Input from '../common/Input';
 import {StudentProps} from '../../types/index';
 import {btn} from '../../styles/btn';
 import {Icon} from '@iconify/react';
@@ -111,7 +110,11 @@ const AddStudent: React.FC<AddStudentProps> = ({students, setStudents}) => {
     });
   };
 
-  function handleSubmit(e: React.FormEvent): void {
+  const handleReset = (): void => {
+    setFormState(initialFormState);
+  };
+
+  const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
     const errors = validate();
     setErrors({...errors} || {});
@@ -120,7 +123,7 @@ const AddStudent: React.FC<AddStudentProps> = ({students, setStudents}) => {
     setStudents([...students, formState]);
     setFormState(initialFormState);
     closeModal();
-  }
+  };
 
   return (
     <React.Fragment>
@@ -131,41 +134,12 @@ const AddStudent: React.FC<AddStudentProps> = ({students, setStudents}) => {
       <AddModal
         modalIsOpen={modalIsOpen}
         closeModal={closeModal}
+        handleChange={handleChange}
         handleSubmit={handleSubmit}
-      >
-        <Input
-          value={formState.firstName}
-          name="firstName"
-          label="First Name"
-          placeholder="Juan"
-          onChange={handleChange}
-          error={errors.firstName}
-        />
-        <Input
-          value={formState.middleName}
-          name="middleName"
-          label="Middle Name"
-          placeholder="Mercado"
-          onChange={handleChange}
-          error={errors.middleName}
-        />
-        <Input
-          value={formState.lastName}
-          name="lastName"
-          label="Last Name"
-          placeholder="Dela Cruz"
-          onChange={handleChange}
-          error={errors.lastName}
-        />
-        <Input
-          value={formState.section}
-          name="section"
-          label="Section"
-          placeholder="3 - Wisdom"
-          onChange={handleChange}
-          error={errors.section}
-        />
-      </AddModal>
+        handleReset={handleReset}
+        formState={formState}
+        error={errors}
+      ></AddModal>
     </React.Fragment>
   );
 };

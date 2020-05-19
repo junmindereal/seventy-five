@@ -1,6 +1,8 @@
 import React from 'react';
 import Modal from 'react-modal';
 import Button from '../common/Button';
+import Input from '../common/Input';
+import {StudentProps} from '../../types';
 import {btn} from '../../styles/btn';
 import {modal} from '../../styles/modal';
 import {form} from '../../styles/form';
@@ -9,16 +11,22 @@ import multiplyIcon from '@iconify/icons-uil/multiply';
 
 interface AddModalProps {
   modalIsOpen: boolean;
+  formState: StudentProps;
   closeModal: () => void;
+  handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
   handleSubmit: (e: React.FormEvent) => void;
-  children: React.ReactNode;
+  handleReset: () => void;
+  error: {[key: string]: string | {}};
 }
 
 const AddModal: React.FC<AddModalProps> = ({
   modalIsOpen,
   closeModal,
+  handleChange,
   handleSubmit,
-  children,
+  handleReset,
+  formState,
+  error,
 }) => {
   return (
     <Modal
@@ -39,8 +47,44 @@ const AddModal: React.FC<AddModalProps> = ({
           />
         </header>
         <form onSubmit={handleSubmit}>
-          {children}
+          <Input
+            value={formState.firstName}
+            name="firstName"
+            label="First Name"
+            placeholder="Juan"
+            onChange={handleChange}
+            error={error.firstName}
+          />
+          <Input
+            value={formState.middleName}
+            name="middleName"
+            label="Middle Name"
+            placeholder="Mercado"
+            onChange={handleChange}
+            error={error.middleName}
+          />
+          <Input
+            value={formState.lastName}
+            name="lastName"
+            label="Last Name"
+            placeholder="Dela Cruz"
+            onChange={handleChange}
+            error={error.lastName}
+          />
+          <Input
+            value={formState.section}
+            name="section"
+            label="Section"
+            placeholder="3 - Wisdom"
+            onChange={handleChange}
+            error={error.section}
+          />
           <div className={form.action}>
+            <Button
+              className={btn.secondary}
+              label="Reset"
+              onClick={handleReset}
+            />
             <Button
               className={btn.tertiary}
               label="Cancel"
