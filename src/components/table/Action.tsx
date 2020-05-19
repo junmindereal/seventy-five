@@ -1,12 +1,8 @@
 import React from 'react';
-import {StudentProps} from '../../types/index';
+import {ActionProps} from '../../types/index';
 import {table} from '../../styles/table';
 import penIcon from '@iconify/icons-uil/pen';
 import {Icon} from '@iconify/react';
-
-type ActionProps = {
-  student: StudentProps;
-};
 
 const Action: React.FC<ActionProps> = ({student}) => {
   const updateStudentGrade = (student: object): void => {

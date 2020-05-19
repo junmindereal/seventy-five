@@ -1,62 +1,27 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {v4 as uuid} from 'uuid';
-import Joi from '@hapi/joi';
 import AddModal from '../modals/AddModal';
+import {initialAddStudentFormState as initialFormState} from '../utils/constants';
+import {AddStudentFormSchema as schema} from '../utils/constants';
 import {StudentProps} from '../../types/index';
+import {AddStudentProps} from '../../types/index';
+import {ErrorsProps} from '../../types/index';
 import {btn} from '../../styles/btn';
 import {Icon} from '@iconify/react';
 import userPlus from '@iconify/icons-uil/user-plus';
 
-type AddStudentProps = {
-  students: StudentProps[];
-  setStudents: React.Dispatch<React.SetStateAction<StudentProps[]>>;
-};
-
-interface ErrorsProps {
-  [key: string]: string | {};
-}
-
 const AddStudent: React.FC<AddStudentProps> = ({students, setStudents}) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  function openModal(): void {
+  const openModal = (): void => {
     setIsOpen(true);
-  }
+  };
 
-  function closeModal(): void {
+  const closeModal = (): void => {
     setIsOpen(false);
-  }
+  };
 
   const [errors, setErrors] = useState<ErrorsProps>({});
-
-  const schema = Joi.object({
-    _id: Joi.string(),
-    firstName: Joi.string().required().label('First Name').min(2),
-    middleName: Joi.string().required().label('Middle Name').min(2),
-    lastName: Joi.string().required().label('Last Name').min(2),
-    section: Joi.string()
-      .required()
-      .pattern(new RegExp('\\d\\s[-]\\s[A-Z|a-z]'), {name: '"4 - Galilee"'}),
-    firstQuarter: Joi.object({
-      quizzes: Joi.array().items(Joi.number),
-      average: Joi.number(),
-    }),
-    secondQuarter: Joi.object({
-      quizzes: Joi.array().items(Joi.number),
-      average: Joi.number(),
-    }),
-    thirdQuarter: Joi.object({
-      quizzes: Joi.array().items(Joi.number()),
-      average: Joi.number(),
-    }),
-    fourthQuarter: Joi.object({
-      quizzes: Joi.array().items(Joi.number()),
-      average: Joi.number(),
-    }),
-    quarterAverages: Joi.array().items(Joi.number()),
-    finalGrade: Joi.number(),
-    passed: Joi.boolean(),
-  });
 
   const validate = (): object | null => {
     const options = {abortEarly: false};
@@ -66,33 +31,6 @@ const AddStudent: React.FC<AddStudentProps> = ({students, setStudents}) => {
     const errors: ErrorsProps = {};
     for (const item of error.details) errors[item.path[0]] = item.message;
     return errors;
-  };
-
-  const initialFormState = {
-    _id: '',
-    firstName: '',
-    middleName: '',
-    lastName: '',
-    section: '',
-    firstQuarter: {
-      quizzes: [],
-      average: 0,
-    },
-    secondQuarter: {
-      quizzes: [],
-      average: 0,
-    },
-    thirdQuarter: {
-      quizzes: [],
-      average: 0,
-    },
-    fourthQuarter: {
-      quizzes: [],
-      average: 0,
-    },
-    quarterAverages: [],
-    finalGrade: 0,
-    passed: false,
   };
 
   const [formState, setFormState] = useState<StudentProps>(initialFormState);
@@ -112,6 +50,7 @@ const AddStudent: React.FC<AddStudentProps> = ({students, setStudents}) => {
 
   const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
+
     const errors = validate();
     setErrors({...errors} || {});
     if (errors) return;

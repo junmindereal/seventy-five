@@ -2,22 +2,12 @@ import React from 'react';
 import Modal from 'react-modal';
 import Button from '../common/Button';
 import Input from '../common/Input';
-import {StudentProps} from '../../types';
+import {AddModalProps} from '../../types';
 import {btn} from '../../styles/btn';
 import {modal} from '../../styles/modal';
 import {form} from '../../styles/form';
 import {Icon} from '@iconify/react';
 import multiplyIcon from '@iconify/icons-uil/multiply';
-
-interface AddModalProps {
-  modalIsOpen: boolean;
-  formState: StudentProps;
-  closeModal: () => void;
-  handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
-  handleSubmit: (e: React.FormEvent) => void;
-  handleReset: () => void;
-  error: {[key: string]: string | {}};
-}
 
 const AddModal: React.FC<AddModalProps> = ({
   modalIsOpen,

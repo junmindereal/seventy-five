@@ -1,3 +1,6 @@
+/**
+ * Student
+ **/
 export interface StudentProps {
   _id: string;
   firstName: string;
@@ -33,6 +36,14 @@ export interface StudentNameProps {
   passed: boolean;
 }
 
+export interface AddStudentProps {
+  students: StudentProps[];
+  setStudents: React.Dispatch<React.SetStateAction<StudentProps[]>>;
+}
+
+/**
+ * Grades
+ **/
 export interface QuarterProps {
   firstQuarter: number;
   secondQuarter: number;
@@ -40,6 +51,13 @@ export interface QuarterProps {
   fourthQuarter: number;
 }
 
+export interface FinalGradeProps {
+  finalGrade: number;
+}
+
+/**
+ * Form
+ **/
 export interface InputProps {
   value: string;
   name: string;
@@ -57,6 +75,30 @@ export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset' | undefined;
 }
 
+export interface ErrorsProps {
+  [key: string]: string | {};
+}
+
+export interface ActionProps {
+  student: StudentProps;
+}
+
+/**
+ * Modal
+ **/
+export interface AddModalProps {
+  modalIsOpen: boolean;
+  formState: StudentProps;
+  closeModal: () => void;
+  handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  handleSubmit: (e: React.FormEvent) => void;
+  handleReset: () => void;
+  error: {[key: string]: string | {}};
+}
+
+/**
+ * Menu
+ **/
 export interface MenuLinkProps {
   icon: object;
   label: string;

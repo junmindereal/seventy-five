@@ -1,9 +1,6 @@
 import React from 'react';
+import {FinalGradeProps} from '../../types/index';
 import {table} from '../../styles/table';
-
-type FinalGradeProps = {
-  finalGrade: number;
-};
 
 const FinalGrade: React.SFC<FinalGradeProps> = ({finalGrade}) => {
   const failingGrade = 74;
