@@ -4,9 +4,12 @@ export const modal = {
     top-1/10
     right-0
     left-0
-    max-w-lg
     mx-auto
     outline-none`,
+  modalAdd: `
+    max-w-lg`,
+  modalUpdate: `
+    max-w-3xl`,
   container: `
     relative
     p-8

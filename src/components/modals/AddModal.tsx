@@ -24,7 +24,7 @@ const AddModal: React.FC<AddModalProps> = ({
       onRequestClose={closeModal}
       shouldCloseOnOverlayClick={true}
       closeTimeoutMS={150}
-      className={modal.modal}
+      className={`${modal.modal} ${modal.modalAdd}`}
       ariaHideApp={false}
     >
       <div className={modal.container}>

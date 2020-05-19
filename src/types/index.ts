@@ -96,6 +96,13 @@ export interface AddModalProps {
   error: {[key: string]: string | {}};
 }
 
+export interface UpdateModalProps {
+  modalIsOpen: boolean;
+  lastName: string;
+  firstName: string;
+  closeModal: () => void;
+}
+
 /**
  * Menu
  **/
