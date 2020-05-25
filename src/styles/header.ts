@@ -5,7 +5,7 @@ export const header = {
     w-1/5
     py-6
     border-r
-    border-gray-300`,
+    border-gray-100`,
   right: `
     flex
     items-center
@@ -13,7 +13,7 @@ export const header = {
     px-6
     border-r
     border-b
-    border-gray-300`,
+    border-gray-100`,
   logo: `
     w-20
     pl-4`,

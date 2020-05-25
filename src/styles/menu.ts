@@ -6,7 +6,7 @@ export const menu = {
     pt-3
     pr-12
     border-r
-    border-gray-300`,
+    border-gray-100`,
   icon: `
     w-8
     h-8

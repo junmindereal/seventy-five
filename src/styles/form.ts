@@ -10,8 +10,7 @@ export const form = {
     text-lg
     text-gray-900
     placeholder-gray-300
-    border-2
-    rounded-md
+    border
     border-gray-200
     bg-white
     outline-none

@@ -7,7 +7,7 @@ export const table = {
     w-full`,
   thead: `
     border-b
-    border-gray-300`,
+    border-gray-100`,
   theadTr: `
     text-left
     text-xl`,
@@ -36,7 +36,7 @@ export const table = {
   tdAction: `pr-6`,
   tbodyTr: `
     border-b
-    border-gray-300
+    border-gray-100
     even:bg-gray-100`,
   name: `
     text-xl

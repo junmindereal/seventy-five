@@ -8,5 +8,5 @@ export const app = {
     content
     flex
     border-r
-    border-gray-300`,
+    border-gray-100`,
 };
