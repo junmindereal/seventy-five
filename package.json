@@ -27,7 +27,7 @@
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|ts|tsx|json)\"",
     "format": "npm run prettier -- --write",
     "check-format": "npm run prettier -- --list-different",
-    "validate": "npm-run-all --parallel check-types check-format lint",
+    "validate": "npm-run-all --parallel check-types check-format lint test",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prebuild": "NODE_ENV=production npm run build:styles",
