@@ -9,7 +9,7 @@ export const modal = {
   modalAdd: `
     max-w-lg`,
   modalUpdate: `
-    max-w-5xl`,
+    max-w-6xl`,
   container: `
     relative
     p-8

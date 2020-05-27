@@ -15,7 +15,8 @@ export const form = {
   rowSeparator: `
     w-px
     h-auto
-    bg-gray-100`,
+    bg-gray-100
+    last:hidden`,
   input: `
     py-2
     px-4

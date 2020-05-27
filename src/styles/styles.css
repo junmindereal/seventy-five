@@ -3574,6 +3574,78 @@ video {
   display: none;
 }
 
+.last\:block:last-child {
+  display: block;
+}
+
+.last\:inline-block:last-child {
+  display: inline-block;
+}
+
+.last\:inline:last-child {
+  display: inline;
+}
+
+.last\:flow-root:last-child {
+  display: flow-root;
+}
+
+.last\:flex:last-child {
+  display: flex;
+}
+
+.last\:inline-flex:last-child {
+  display: inline-flex;
+}
+
+.last\:grid:last-child {
+  display: grid;
+}
+
+.last\:inline-grid:last-child {
+  display: inline-grid;
+}
+
+.last\:table:last-child {
+  display: table;
+}
+
+.last\:table-caption:last-child {
+  display: table-caption;
+}
+
+.last\:table-cell:last-child {
+  display: table-cell;
+}
+
+.last\:table-column:last-child {
+  display: table-column;
+}
+
+.last\:table-column-group:last-child {
+  display: table-column-group;
+}
+
+.last\:table-footer-group:last-child {
+  display: table-footer-group;
+}
+
+.last\:table-header-group:last-child {
+  display: table-header-group;
+}
+
+.last\:table-row-group:last-child {
+  display: table-row-group;
+}
+
+.last\:table-row:last-child {
+  display: table-row;
+}
+
+.last\:hidden:last-child {
+  display: none;
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -12601,6 +12673,78 @@ video {
     display: none;
   }
 
+  .sm\:last\:block:last-child {
+    display: block;
+  }
+
+  .sm\:last\:inline-block:last-child {
+    display: inline-block;
+  }
+
+  .sm\:last\:inline:last-child {
+    display: inline;
+  }
+
+  .sm\:last\:flow-root:last-child {
+    display: flow-root;
+  }
+
+  .sm\:last\:flex:last-child {
+    display: flex;
+  }
+
+  .sm\:last\:inline-flex:last-child {
+    display: inline-flex;
+  }
+
+  .sm\:last\:grid:last-child {
+    display: grid;
+  }
+
+  .sm\:last\:inline-grid:last-child {
+    display: inline-grid;
+  }
+
+  .sm\:last\:table:last-child {
+    display: table;
+  }
+
+  .sm\:last\:table-caption:last-child {
+    display: table-caption;
+  }
+
+  .sm\:last\:table-cell:last-child {
+    display: table-cell;
+  }
+
+  .sm\:last\:table-column:last-child {
+    display: table-column;
+  }
+
+  .sm\:last\:table-column-group:last-child {
+    display: table-column-group;
+  }
+
+  .sm\:last\:table-footer-group:last-child {
+    display: table-footer-group;
+  }
+
+  .sm\:last\:table-header-group:last-child {
+    display: table-header-group;
+  }
+
+  .sm\:last\:table-row-group:last-child {
+    display: table-row-group;
+  }
+
+  .sm\:last\:table-row:last-child {
+    display: table-row;
+  }
+
+  .sm\:last\:hidden:last-child {
+    display: none;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -21608,6 +21752,78 @@ video {
   }
 
   .md\:hidden {
+    display: none;
+  }
+
+  .md\:last\:block:last-child {
+    display: block;
+  }
+
+  .md\:last\:inline-block:last-child {
+    display: inline-block;
+  }
+
+  .md\:last\:inline:last-child {
+    display: inline;
+  }
+
+  .md\:last\:flow-root:last-child {
+    display: flow-root;
+  }
+
+  .md\:last\:flex:last-child {
+    display: flex;
+  }
+
+  .md\:last\:inline-flex:last-child {
+    display: inline-flex;
+  }
+
+  .md\:last\:grid:last-child {
+    display: grid;
+  }
+
+  .md\:last\:inline-grid:last-child {
+    display: inline-grid;
+  }
+
+  .md\:last\:table:last-child {
+    display: table;
+  }
+
+  .md\:last\:table-caption:last-child {
+    display: table-caption;
+  }
+
+  .md\:last\:table-cell:last-child {
+    display: table-cell;
+  }
+
+  .md\:last\:table-column:last-child {
+    display: table-column;
+  }
+
+  .md\:last\:table-column-group:last-child {
+    display: table-column-group;
+  }
+
+  .md\:last\:table-footer-group:last-child {
+    display: table-footer-group;
+  }
+
+  .md\:last\:table-header-group:last-child {
+    display: table-header-group;
+  }
+
+  .md\:last\:table-row-group:last-child {
+    display: table-row-group;
+  }
+
+  .md\:last\:table-row:last-child {
+    display: table-row;
+  }
+
+  .md\:last\:hidden:last-child {
     display: none;
   }
 
@@ -30621,6 +30837,78 @@ video {
     display: none;
   }
 
+  .lg\:last\:block:last-child {
+    display: block;
+  }
+
+  .lg\:last\:inline-block:last-child {
+    display: inline-block;
+  }
+
+  .lg\:last\:inline:last-child {
+    display: inline;
+  }
+
+  .lg\:last\:flow-root:last-child {
+    display: flow-root;
+  }
+
+  .lg\:last\:flex:last-child {
+    display: flex;
+  }
+
+  .lg\:last\:inline-flex:last-child {
+    display: inline-flex;
+  }
+
+  .lg\:last\:grid:last-child {
+    display: grid;
+  }
+
+  .lg\:last\:inline-grid:last-child {
+    display: inline-grid;
+  }
+
+  .lg\:last\:table:last-child {
+    display: table;
+  }
+
+  .lg\:last\:table-caption:last-child {
+    display: table-caption;
+  }
+
+  .lg\:last\:table-cell:last-child {
+    display: table-cell;
+  }
+
+  .lg\:last\:table-column:last-child {
+    display: table-column;
+  }
+
+  .lg\:last\:table-column-group:last-child {
+    display: table-column-group;
+  }
+
+  .lg\:last\:table-footer-group:last-child {
+    display: table-footer-group;
+  }
+
+  .lg\:last\:table-header-group:last-child {
+    display: table-header-group;
+  }
+
+  .lg\:last\:table-row-group:last-child {
+    display: table-row-group;
+  }
+
+  .lg\:last\:table-row:last-child {
+    display: table-row;
+  }
+
+  .lg\:last\:hidden:last-child {
+    display: none;
+  }
+
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -39628,6 +39916,78 @@ video {
   }
 
   .xl\:hidden {
+    display: none;
+  }
+
+  .xl\:last\:block:last-child {
+    display: block;
+  }
+
+  .xl\:last\:inline-block:last-child {
+    display: inline-block;
+  }
+
+  .xl\:last\:inline:last-child {
+    display: inline;
+  }
+
+  .xl\:last\:flow-root:last-child {
+    display: flow-root;
+  }
+
+  .xl\:last\:flex:last-child {
+    display: flex;
+  }
+
+  .xl\:last\:inline-flex:last-child {
+    display: inline-flex;
+  }
+
+  .xl\:last\:grid:last-child {
+    display: grid;
+  }
+
+  .xl\:last\:inline-grid:last-child {
+    display: inline-grid;
+  }
+
+  .xl\:last\:table:last-child {
+    display: table;
+  }
+
+  .xl\:last\:table-caption:last-child {
+    display: table-caption;
+  }
+
+  .xl\:last\:table-cell:last-child {
+    display: table-cell;
+  }
+
+  .xl\:last\:table-column:last-child {
+    display: table-column;
+  }
+
+  .xl\:last\:table-column-group:last-child {
+    display: table-column-group;
+  }
+
+  .xl\:last\:table-footer-group:last-child {
+    display: table-footer-group;
+  }
+
+  .xl\:last\:table-header-group:last-child {
+    display: table-header-group;
+  }
+
+  .xl\:last\:table-row-group:last-child {
+    display: table-row-group;
+  }
+
+  .xl\:last\:table-row:last-child {
+    display: table-row;
+  }
+
+  .xl\:last\:hidden:last-child {
     display: none;
   }
 

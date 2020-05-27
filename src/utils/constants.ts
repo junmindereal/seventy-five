@@ -30,6 +30,37 @@ export const initialAddStudentFormState = {
   passed: false,
 };
 
+export const quarters = [
+  {
+    quarter: {
+      title: '1st Quarter',
+      name: 'firstQuarter',
+      quizzes: [0],
+    },
+  },
+  {
+    quarter: {
+      title: '2nd Quarter',
+      name: 'secondQuarter',
+      quizzes: [0, 78],
+    },
+  },
+  {
+    quarter: {
+      title: '3rd Quarter',
+      name: 'thirdQuarter',
+      quizzes: [0],
+    },
+  },
+  {
+    quarter: {
+      title: '4th Quarter',
+      name: 'fourthQuarter',
+      quizzes: [0],
+    },
+  },
+];
+
 /**
  * Schemas
  **/
