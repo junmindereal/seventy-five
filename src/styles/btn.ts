@@ -54,6 +54,11 @@ export const btn = {
     border-2
     text-xl
     text-green-700`,
+  actionBtn: `
+    flex
+    items-center`,
+  actionBtnText: `
+    ml-2`,
   reset: `
     mr-auto
     focus:bg-green-400

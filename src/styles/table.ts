@@ -95,7 +95,8 @@ export const table = {
     transition
     duration-150
     ease-in-out
-    hover:bg-green-500`,
+    hover:bg-green-500
+    focus:outline-none`,
   actionBtnText: `
     ml-2`,
 };

@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
+import UpdateStudentModal from '../modals/UpdateModal';
 import {ActionProps} from '../../types/index';
 import {table} from '../../styles/table';
-import penIcon from '@iconify/icons-uil/pen';
+import {btn} from '../../styles/btn';
 import {Icon} from '@iconify/react';
-import UpdateStudentModal from '../modals/UpdateModal';
+import penIcon from '@iconify/icons-uil/pen';
 
 const Action: React.FC<ActionProps> = ({student}) => {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -20,9 +21,12 @@ const Action: React.FC<ActionProps> = ({student}) => {
     <React.Fragment>
       <td className={`${table.td} ${table.tdAction}`}>
         <div className={table.action}>
-          <button className={table.actionBtn} onClick={openModal}>
+          <button
+            className={`${btn.primary} ${btn.actionBtn}`}
+            onClick={openModal}
+          >
             <Icon icon={penIcon} />
-            <span className={table.actionBtnText}>Update</span>
+            <span className={btn.actionBtnText}>Update</span>
           </button>
         </div>
       </td>
