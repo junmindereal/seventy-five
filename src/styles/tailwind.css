@@ -13,6 +13,7 @@
 
 .ReactModal__Overlay--after-open {
   opacity: 1;
+  overflow-y: scroll;
 }
 
 .ReactModal__Overlay--before-close {

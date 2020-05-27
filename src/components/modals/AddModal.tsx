@@ -29,7 +29,7 @@ const AddModal: React.FC<AddModalProps> = ({
     >
       <div className={modal.container}>
         <header className={modal.header}>
-          <h2 className={modal.heading}>Add Student</h2>
+          <h2 className={modal.heading}>Add Student Form</h2>
           <Button
             className={modal.close}
             onClick={closeModal}
@@ -82,7 +82,7 @@ const AddModal: React.FC<AddModalProps> = ({
             />
             <Button
               className={`${btn.primary} ${form.submit}`}
-              label="Submit"
+              label="Add Student"
               type="submit"
             />
           </div>

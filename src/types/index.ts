@@ -59,13 +59,15 @@ export interface FinalGradeProps {
  * Form
  **/
 export interface InputProps {
-  value: string;
+  value?: string | number;
   name: string;
   label: string;
   placeholder: string;
-  type?: string;
   onChange: (e: React.FormEvent<HTMLInputElement>) => void;
   error: string | {};
+  type?: string;
+  pattern?: string;
+  step?: string;
 }
 
 export interface ButtonProps {

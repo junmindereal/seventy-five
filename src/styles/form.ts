@@ -3,6 +3,19 @@ export const form = {
     flex
     flex-col
     mb-3`,
+  col: `
+    flex
+    justify-between`,
+  row: `
+    w-2/12`,
+  rowTitle: `
+    font-semibold
+    text-2xl
+    text-gray-900`,
+  rowSeparator: `
+    w-px
+    h-auto
+    bg-gray-100`,
   input: `
     py-2
     px-4
