@@ -42,7 +42,7 @@ export const quarters = [
     quarter: {
       title: '2nd Quarter',
       name: 'secondQuarter',
-      quizzes: [0, 78],
+      quizzes: [0],
     },
   },
   {
