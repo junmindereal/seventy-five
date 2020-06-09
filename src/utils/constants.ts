@@ -9,28 +9,34 @@ export const initialAddStudentFormState = {
   middleName: '',
   lastName: '',
   section: '',
-  firstQuarter: {
-    quizzes: [],
-    average: 0,
-  },
-  secondQuarter: {
-    quizzes: [],
-    average: 0,
-  },
-  thirdQuarter: {
-    quizzes: [],
-    average: 0,
-  },
-  fourthQuarter: {
-    quizzes: [],
-    average: 0,
-  },
-  quarterAverages: [],
+  quarters: [
+    {
+      name: 'firstQuarter',
+      quizzes: [0],
+      average: 0,
+    },
+    {
+      name: 'secondQuarter',
+      quizzes: [0],
+      average: 0,
+    },
+    {
+      name: 'thirdQuarter',
+      quizzes: [0],
+      average: 0,
+    },
+    {
+      name: 'fourthQuarter',
+      quizzes: [0],
+      average: 0,
+    },
+  ],
+  quarterAverages: [0],
   finalGrade: 0,
   passed: false,
 };
 
-export const quarters = [
+export const initialQuizStatePerQuarter = [
   {
     quarter: {
       title: '1st Quarter',
@@ -72,22 +78,13 @@ export const AddStudentFormSchema = Joi.object({
   section: Joi.string()
     .required()
     .pattern(new RegExp('\\d\\s[-]\\s[A-Z|a-z]'), {name: '"4 - Galilee"'}),
-  firstQuarter: Joi.object({
-    quizzes: Joi.array().items(Joi.number),
-    average: Joi.number(),
-  }),
-  secondQuarter: Joi.object({
-    quizzes: Joi.array().items(Joi.number),
-    average: Joi.number(),
-  }),
-  thirdQuarter: Joi.object({
-    quizzes: Joi.array().items(Joi.number()),
-    average: Joi.number(),
-  }),
-  fourthQuarter: Joi.object({
-    quizzes: Joi.array().items(Joi.number()),
-    average: Joi.number(),
-  }),
+  quarters: Joi.array().items(
+    Joi.object({
+      name: Joi.string().required(),
+      quizzes: Joi.array().items(Joi.number()).required(),
+      average: Joi.number().required(),
+    }),
+  ),
   quarterAverages: Joi.array().items(Joi.number()),
   finalGrade: Joi.number(),
   passed: Joi.boolean(),

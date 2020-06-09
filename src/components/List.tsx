@@ -33,10 +33,10 @@ const List: React.FC<StudentsProps> = ({students}) => {
                 passed={student.passed}
               />
               <Quarter
-                firstQuarter={student.firstQuarter.average}
-                secondQuarter={student.secondQuarter.average}
-                thirdQuarter={student.thirdQuarter.average}
-                fourthQuarter={student.fourthQuarter.average}
+                firstQuarter={student.quarters[0].average}
+                secondQuarter={student.quarters[1].average}
+                thirdQuarter={student.quarters[2].average}
+                fourthQuarter={student.quarters[3].average}
               />
               <FinalGrade finalGrade={student.finalGrade} />
               <Action student={student} />

@@ -7,22 +7,11 @@ export interface StudentProps {
   middleName: string;
   lastName: string;
   section: string;
-  firstQuarter: {
+  quarters: {
+    name: string;
     quizzes: number[];
     average: number;
-  };
-  secondQuarter: {
-    quizzes: number[];
-    average: number;
-  };
-  thirdQuarter: {
-    quizzes: number[];
-    average: number;
-  };
-  fourthQuarter: {
-    quizzes: number[];
-    average: number;
-  };
+  }[];
   quarterAverages: number[];
   finalGrade: number;
   passed: boolean;
@@ -53,6 +42,14 @@ export interface QuarterProps {
 
 export interface FinalGradeProps {
   finalGrade: number;
+}
+
+export interface InitialQuizStatePerQuarterProps {
+  quarter: {
+    title: string;
+    name: string;
+    quizzes: number[];
+  };
 }
 
 /**

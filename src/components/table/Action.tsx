@@ -6,6 +6,10 @@ import {btn} from '../../styles/btn';
 import {Icon} from '@iconify/react';
 import penIcon from '@iconify/icons-uil/pen';
 
+interface FilterQuizProps {
+  [key: string]: string;
+}
+
 const Action: React.FC<ActionProps> = ({student}) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 

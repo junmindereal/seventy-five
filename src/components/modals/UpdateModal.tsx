@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import Button from '../common/Button';
 import Input from '../common/Input';
 import {UpdateModalProps} from '../../types';
-import {quarters} from '../../utils/constants';
+import {initialQuizStatePerQuarter as quarters} from '../../utils/constants';
 import {modal} from '../../styles/modal';
 import {form} from '../../styles/form';
 import {btn} from '../../styles/btn';
@@ -48,7 +48,7 @@ const UpdateModal: React.FC<UpdateModalProps> = ({
                     <Input
                       value={quiz}
                       error="invalid number"
-                      name={`${quarter.name}-quiz-${index + 1}`}
+                      name={`${quarter.name}-quiz-${index}`}
                       label={`Quiz ${index + 1}`}
                       onChange={(): void => {
                         return undefined;
