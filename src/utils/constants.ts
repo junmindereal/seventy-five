@@ -85,7 +85,7 @@ export const AddStudentFormSchema = Joi.object({
       average: Joi.number().required(),
     }),
   ),
-  quarterAverages: Joi.array().items(Joi.number()),
+  quarterAverages: Joi.array().items(Joi.number().required()),
   finalGrade: Joi.number(),
   passed: Joi.boolean(),
 });
