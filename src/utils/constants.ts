@@ -13,25 +13,25 @@ export const initialAddStudentFormState = {
     {
       name: 'firstQuarter',
       label: 'First Quarter',
-      quizzes: [0],
+      quizzes: ['0'],
       average: 0,
     },
     {
       name: 'secondQuarter',
       label: 'Second Quarter',
-      quizzes: [0],
+      quizzes: ['0'],
       average: 0,
     },
     {
       name: 'thirdQuarter',
       label: 'Third Quarter',
-      quizzes: [0],
+      quizzes: ['0'],
       average: 0,
     },
     {
       name: 'fourthQuarter',
       label: 'Fourth Quarter',
-      quizzes: [0],
+      quizzes: ['0'],
       average: 0,
     },
   ],
@@ -54,11 +54,23 @@ export const AddStudentFormSchema = Joi.object({
   quarters: Joi.array().items(
     Joi.object({
       name: Joi.string().required(),
-      quizzes: Joi.array().items(Joi.number()).required(),
+      label: Joi.string().required(),
+      quizzes: Joi.array().items(Joi.string()).required(),
       average: Joi.number().required(),
     }),
   ),
   quarterAverages: Joi.array().items(Joi.number().required()),
   finalGrade: Joi.number(),
   passed: Joi.boolean(),
+});
+
+export const quizFormSchema = Joi.object({
+  quarters: Joi.array().items(
+    Joi.object({
+      name: Joi.string().required(),
+      label: Joi.string().required(),
+      quizzes: Joi.array().items(Joi.string()).required(),
+      average: Joi.number().required(),
+    }),
+  ),
 });

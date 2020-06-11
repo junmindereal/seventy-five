@@ -15,6 +15,7 @@ const UpdateModal: React.FC<UpdateModalProps> = ({
   lastName,
   firstName,
   quarters,
+  handleChange,
   error,
 }) => {
   const handleReset = (): void => {
@@ -51,9 +52,7 @@ const UpdateModal: React.FC<UpdateModalProps> = ({
                       error={error.name}
                       name={`${quarter.name}-quiz-${index}`}
                       label={`Quiz ${index + 1}`}
-                      onChange={(): void => {
-                        return undefined;
-                      }}
+                      onChange={handleChange}
                       placeholder="0"
                       type="number"
                       step="any"

@@ -10,7 +10,7 @@ export interface StudentProps {
   quarters: {
     name: string;
     label: string;
-    quizzes: number[];
+    quizzes: string[];
     average: number;
   }[];
   quarterAverages: number[];
@@ -96,10 +96,11 @@ export interface UpdateModalProps {
   quarters: {
     name: string;
     label: string;
-    quizzes: number[];
+    quizzes: string[];
     average: number;
   }[];
   handleReset: () => void;
+  handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
   error: {[key: string]: string | {}};
 }
 
