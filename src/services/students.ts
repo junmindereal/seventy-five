@@ -10,21 +10,25 @@ const students: StudentProps[] = [
     quarters: [
       {
         name: 'firstQuarter',
+        label: 'First Quarter',
         quizzes: [75, 80, 86, 90],
         average: 83,
       },
       {
         name: 'secondQuarter',
+        label: 'Second Quarter',
         quizzes: [75, 80, 86, 90],
         average: 83,
       },
       {
         name: 'thirdQuarter',
+        label: 'Third Quarter',
         quizzes: [75, 80, 86, 90],
         average: 83,
       },
       {
         name: 'fourthQuarter',
+        label: 'Fourth Quarter',
         quizzes: [75, 80, 86, 90],
         average: 83,
       },
@@ -42,21 +46,25 @@ const students: StudentProps[] = [
     quarters: [
       {
         name: 'firstQuarter',
+        label: 'First Quarter',
         quizzes: [74, 74, 74, 74],
         average: 74,
       },
       {
         name: 'secondQuarter',
+        label: 'Second Quarter',
         quizzes: [74, 74, 74, 74],
         average: 74,
       },
       {
         name: 'thirdQuarter',
+        label: 'Third Quarter',
         quizzes: [74, 74, 74, 74],
         average: 74,
       },
       {
         name: 'fourthQuarter',
+        label: 'Fourth Quarter',
         quizzes: [74, 74, 74, 74],
         average: 74,
       },
@@ -74,21 +82,25 @@ const students: StudentProps[] = [
     quarters: [
       {
         name: 'firstQuarter',
+        label: 'First Quarter',
         quizzes: [74, 74],
         average: 74,
       },
       {
         name: 'secondQuarter',
+        label: 'Second Quarter',
         quizzes: [0],
         average: 0,
       },
       {
         name: 'thirdQuarter',
+        label: 'Third Quarter',
         quizzes: [0],
         average: 0,
       },
       {
         name: 'fourthQuarter',
+        label: 'Fourth Quarter',
         quizzes: [0],
         average: 0,
       },
@@ -106,21 +118,25 @@ const students: StudentProps[] = [
     quarters: [
       {
         name: 'firstQuarter',
+        label: 'First Quarter',
         quizzes: [80, 80, 80],
         average: 80,
       },
       {
         name: 'secondQuarter',
+        label: 'Second Quarter',
         quizzes: [70, 70, 70],
         average: 70,
       },
       {
         name: 'thirdQuarter',
+        label: 'Third Quarter',
         quizzes: [0],
         average: 0,
       },
       {
         name: 'fourthQuarter',
+        label: 'Fourth Quarter',
         quizzes: [0],
         average: 0,
       },
@@ -138,21 +154,25 @@ const students: StudentProps[] = [
     quarters: [
       {
         name: 'firstQuarter',
+        label: 'First Quarter',
         quizzes: [0],
         average: 0,
       },
       {
         name: 'secondQuarter',
+        label: 'Second Quarter',
         quizzes: [0],
         average: 0,
       },
       {
         name: 'thirdQuarter',
+        label: 'Third Quarter',
         quizzes: [0],
         average: 0,
       },
       {
         name: 'fourthQuarter',
+        label: 'Fourth Quarter',
         quizzes: [0],
         average: 0,
       },

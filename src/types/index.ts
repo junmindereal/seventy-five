@@ -9,6 +9,7 @@ export interface StudentProps {
   section: string;
   quarters: {
     name: string;
+    label: string;
     quizzes: number[];
     average: number;
   }[];
@@ -42,14 +43,6 @@ export interface QuarterProps {
 
 export interface FinalGradeProps {
   finalGrade: number;
-}
-
-export interface InitialQuizStatePerQuarterProps {
-  quarter: {
-    title: string;
-    name: string;
-    quizzes: number[];
-  };
 }
 
 /**
@@ -102,9 +95,12 @@ export interface UpdateModalProps {
   closeModal: () => void;
   quarters: {
     name: string;
+    label: string;
     quizzes: number[];
     average: number;
   }[];
+  handleReset: () => void;
+  error: {[key: string]: string | {}};
 }
 
 /**

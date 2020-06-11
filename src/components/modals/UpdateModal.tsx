@@ -15,6 +15,7 @@ const UpdateModal: React.FC<UpdateModalProps> = ({
   lastName,
   firstName,
   quarters,
+  error,
 }) => {
   const handleReset = (): void => {
     console.log('Reset');
@@ -43,11 +44,11 @@ const UpdateModal: React.FC<UpdateModalProps> = ({
             {quarters.map((quarter, index) => (
               <React.Fragment key={index}>
                 <div className={form.row}>
-                  <h2 className={form.rowTitle}>{quarter.name}</h2>
+                  <h2 className={form.rowTitle}>{quarter.label}</h2>
                   {quarter.quizzes.map((quiz, index) => (
                     <Input
                       value={quiz}
-                      error="invalid number"
+                      error={error.name}
                       name={`${quarter.name}-quiz-${index}`}
                       label={`Quiz ${index + 1}`}
                       onChange={(): void => {
