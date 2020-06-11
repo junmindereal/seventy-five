@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import UpdateStudentModal from '../modals/UpdateModal';
-import {quizFormSchema as schema} from '../../utils/constants';
+// import {quizFormSchema as schema} from '../../utils/constants';
 import {ActionProps} from '../../types/index';
 import {ErrorsProps} from '../../types/index';
 import {table} from '../../styles/table';
@@ -14,7 +14,10 @@ interface SplitInputNameProps {
 
 const Action: React.FC<ActionProps> = ({student}) => {
   const [modalIsOpen, setIsOpen] = useState(false);
-  const initialQuizState = student.quarters;
+
+  const initialQuizState = student.quarters.map(quarter => {
+    return JSON.parse(JSON.stringify(quarter));
+  });
 
   const openModal = (): void => {
     setIsOpen(true);
@@ -24,21 +27,21 @@ const Action: React.FC<ActionProps> = ({student}) => {
     setIsOpen(false);
   };
 
-  const [quizState, setQuizState] = useState(initialQuizState);
+  const [quizState, setQuizState] = useState([...initialQuizState]);
 
   const [errors, setErrors] = useState<ErrorsProps>({
     name: '',
   });
 
-  const validate = (): object | null => {
-    const options = {abortEarly: false};
-    const {error} = schema.validate(quizState, options);
-    if (!error) return null;
+  // const validate = (): object | null => {
+  //   const options = {abortEarly: false};
+  //   const {error} = schema.validate(quizState, options);
+  //   if (!error) return null;
 
-    const errors: ErrorsProps = {};
-    for (const item of error.details) errors[item.path[0]] = item.message;
-    return errors;
-  };
+  //   const errors: ErrorsProps = {};
+  //   for (const item of error.details) errors[item.path[0]] = item.message;
+  //   return errors;
+  // };
 
   const splitInputName = (name: string): SplitInputNameProps => {
     const names = name.split('-');
@@ -56,18 +59,19 @@ const Action: React.FC<ActionProps> = ({student}) => {
 
     newQuizState.map(quarter => {
       if (quarter.name === name.quarter) {
-        const newQuizzes = quarter.quizzes.map((quiz, index) => {
-          const quizNumber = parseInt(name.quizNumber);
-          if (index === quizNumber) {
-            quiz = input.value;
-          }
-          return quiz;
-        });
-        quarter.quizzes = newQuizzes;
+        const newQuizzes = quarter.quizzes.map(
+          (quiz: string, index: number) => {
+            const quizNumber = parseInt(name.quizNumber);
+            if (index === quizNumber) {
+              return (quiz = input.value);
+            }
+            return quiz;
+          },
+        );
+        return (quarter.quizzes = newQuizzes);
       }
       return quarter;
     });
-
     setQuizState(newQuizState);
   };
 

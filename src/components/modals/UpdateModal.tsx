@@ -16,12 +16,9 @@ const UpdateModal: React.FC<UpdateModalProps> = ({
   firstName,
   quarters,
   handleChange,
+  handleReset,
   error,
 }) => {
-  const handleReset = (): void => {
-    console.log('Reset');
-  };
-
   return (
     <Modal
       isOpen={modalIsOpen}
