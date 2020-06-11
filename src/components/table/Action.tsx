@@ -21,6 +21,8 @@ const Action: React.FC<ActionProps> = ({student}) => {
     setIsOpen(false);
   };
 
+  const [quizState] = useState(student.quarters);
+
   return (
     <React.Fragment>
       <td className={`${table.td} ${table.tdAction}`}>
@@ -39,6 +41,7 @@ const Action: React.FC<ActionProps> = ({student}) => {
         closeModal={closeModal}
         lastName={student.lastName}
         firstName={student.firstName}
+        quarters={quizState}
       />
     </React.Fragment>
   );

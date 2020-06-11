@@ -100,6 +100,11 @@ export interface UpdateModalProps {
   lastName: string;
   firstName: string;
   closeModal: () => void;
+  quarters: {
+    name: string;
+    quizzes: number[];
+    average: number;
+  }[];
 }
 
 /**

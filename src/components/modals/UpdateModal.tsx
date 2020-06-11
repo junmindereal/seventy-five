@@ -3,7 +3,6 @@ import Modal from 'react-modal';
 import Button from '../common/Button';
 import Input from '../common/Input';
 import {UpdateModalProps} from '../../types';
-import {initialQuizStatePerQuarter as quarters} from '../../utils/constants';
 import {modal} from '../../styles/modal';
 import {form} from '../../styles/form';
 import {btn} from '../../styles/btn';
@@ -15,6 +14,7 @@ const UpdateModal: React.FC<UpdateModalProps> = ({
   closeModal,
   lastName,
   firstName,
+  quarters,
 }) => {
   const handleReset = (): void => {
     console.log('Reset');
@@ -40,10 +40,10 @@ const UpdateModal: React.FC<UpdateModalProps> = ({
         </header>
         <form>
           <div className={form.col}>
-            {quarters.map(({quarter}, index) => (
+            {quarters.map((quarter, index) => (
               <React.Fragment key={index}>
                 <div className={form.row}>
-                  <h2 className={form.rowTitle}>{quarter.title}</h2>
+                  <h2 className={form.rowTitle}>{quarter.name}</h2>
                   {quarter.quizzes.map((quiz, index) => (
                     <Input
                       value={quiz}
