@@ -17,6 +17,7 @@ const UpdateModal: React.FC<UpdateModalProps> = ({
   quarters,
   handleChange,
   handleReset,
+  handleAddQuiz,
   error,
 }) => {
   return (
@@ -58,10 +59,9 @@ const UpdateModal: React.FC<UpdateModalProps> = ({
                   ))}
                   <Button
                     className={`${btn.primary}`}
+                    id={`btn-${quarter.name}`}
                     label="Add Quiz"
-                    onClick={(): void => {
-                      return undefined;
-                    }}
+                    onClick={handleAddQuiz}
                   />
                 </div>
                 <div className={form.rowSeparator}></div>

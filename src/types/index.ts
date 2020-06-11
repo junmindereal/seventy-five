@@ -61,9 +61,10 @@ export interface InputProps {
 }
 
 export interface ButtonProps {
+  id?: string;
   className: string;
   label: string | React.ReactNode;
-  onClick?: () => void;
+  onClick?: (e: React.FormEvent<HTMLButtonElement>) => void;
   type?: 'button' | 'submit' | 'reset' | undefined;
 }
 
@@ -101,6 +102,7 @@ export interface UpdateModalProps {
   }[];
   handleReset: () => void;
   handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  handleAddQuiz: (e: React.FormEvent<HTMLButtonElement>) => void;
   error: {[key: string]: string | {}};
 }
 

@@ -15,10 +15,6 @@ interface SplitInputNameProps {
 const Action: React.FC<ActionProps> = ({student}) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  const initialQuizState = student.quarters.map(quarter => {
-    return JSON.parse(JSON.stringify(quarter));
-  });
-
   const openModal = (): void => {
     setIsOpen(true);
   };
@@ -26,6 +22,10 @@ const Action: React.FC<ActionProps> = ({student}) => {
   const closeModal = (): void => {
     setIsOpen(false);
   };
+
+  const initialQuizState = student.quarters.map(quarter => {
+    return JSON.parse(JSON.stringify(quarter));
+  });
 
   const [quizState, setQuizState] = useState([...initialQuizState]);
 
@@ -54,24 +54,36 @@ const Action: React.FC<ActionProps> = ({student}) => {
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>): void => {
     const input = e.currentTarget;
-    const name = splitInputName(input.name);
+    const inputName = splitInputName(input.name);
     const newQuizState = [...quizState];
 
     newQuizState.map(quarter => {
-      if (quarter.name === name.quarter) {
+      if (quarter.name === inputName.quarter) {
         const newQuizzes = quarter.quizzes.map(
           (quiz: string, index: number) => {
-            const quizNumber = parseInt(name.quizNumber);
-            if (index === quizNumber) {
-              return (quiz = input.value);
-            }
+            const quizNumber = parseInt(inputName.quizNumber);
+            if (index === quizNumber) return (quiz = input.value);
             return quiz;
           },
         );
+
         return (quarter.quizzes = newQuizzes);
       }
+
       return quarter;
     });
+    setQuizState(newQuizState);
+  };
+
+  const handleAddQuiz = (e: React.FormEvent<HTMLButtonElement>): void => {
+    console.log(e.currentTarget.id);
+    const id = e.currentTarget.id.split('-');
+    const newQuizState = [...quizState];
+    newQuizState.map(quarter => {
+      if (quarter.name === id[1]) return quarter.quizzes.push(0);
+      return quarter;
+    });
+
     setQuizState(newQuizState);
   };
 
@@ -107,6 +119,7 @@ const Action: React.FC<ActionProps> = ({student}) => {
         quarters={quizState}
         handleReset={handleReset}
         handleChange={handleChange}
+        handleAddQuiz={handleAddQuiz}
         error={errors}
       />
     </React.Fragment>
